@@ -1,25 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-
+let data = require('./book.json')
+data = data["book-sales"]
+console.log(data)
+const Books = () => {
+  return (
+    data.map(book => { return(
+      <Book book={book}/>
+    )}))
+}
+const Book = (props) => {
+  return (
+    <p>
+    {props.book["title"]},
+      <img src={props.book["url"]}/>
+    {props.book["class"]},
+    {props.book["seller-name"]},
+    {props.book["seller-phone"]},
+    {props.book["price"]}</p>
+  )
+}
 function App() {
+  console.log('data');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Books/>
     </div>
   );
 }
-
 export default App;

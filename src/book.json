@@ -1,0 +1,20 @@
+{
+    "book-sales": [
+        {
+        "title": "Modern Chinese 1A",
+        "url": "https://www.chinasprout.com/store/media/BLA022L01-1.jpg",
+        "class": "Chinese 111-1",
+        "seller-name": "Sydney Smith",
+        "seller-phone": "978 727 4528",
+        "price": "30"
+        },
+        {
+        "title": "Modern Chinese 2A",
+        "url": "https://cypressbooks.com/bookimages/9781845700379a.jpg",
+        "class": "Chinese 111-3",
+        "seller-name": "Teagan Smith",
+        "seller-phone": "222 333 1111",
+        "price": "35"
+        }
+    ]
+}
