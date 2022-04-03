@@ -149,11 +149,11 @@ const addBook = async(Book) =>{
     }
   }
 }
-let newBook = {
-  "title" : "Chinese"
-}
+// let newBook = {
+//   "title" : "Chinese"
+// }
 
-addBook(newBook);
+// addBook(newBook);
 
 function App() {
   // Prints the content in the database
