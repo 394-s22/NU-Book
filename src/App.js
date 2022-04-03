@@ -3,6 +3,7 @@ import './App.css';
 let data = require('./book.json')
 data = data["book-sales"]
 console.log(data)
+
 const Books = () => {
   return (
     data.map(book => { return(
@@ -17,13 +18,15 @@ const Book = (props) => {
     {props.book["class"]},
     {props.book["seller-name"]},
     {props.book["seller-phone"]},
-    {props.book["price"]}</p>
+    {props.book["price"]}
+    </p>
   )
 }
 function App() {
   console.log('data');
   return (
     <div className="App">
+        <button>List a Book</button>
         <Books/>
     </div>
   );
