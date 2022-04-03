@@ -8,7 +8,8 @@
         "class_num": "111-1",
         "seller-name": "Sydney Smith",
         "seller-phone": "978 727 4528",
-        "price": "30"
+        "price": "30",
+        "email": "sydneysmith2022@u.northwestern.edu"
         },
         {
         "title": "Modern Chinese",
@@ -18,7 +19,8 @@
         "class_num": "111-3",
         "seller-name": "Teagan Smith",
         "seller-phone": "222 333 1111",
-        "price": "35"
+        "price": "35",
+        "email": "sydney.rae.smith@gmail.com"
         }
     ]
 }
