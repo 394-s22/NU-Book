@@ -3,7 +3,7 @@ import React from 'react'
 
 function Title() {
   return (
-    <div>
+    <div id="navbar">
       <h1>NU Book</h1>
     </div>
   )
