@@ -1,25 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-/*
+import React, {useState} from "react";
+import { useData, setData, addData } from './utilities/firebase.js';
 import Title from './Title.js';
-*/
-import * as React from 'react';
-import Title from './Title.js';
-import {useState} from "react";
-
-let data = require('./book.json')
-data = data["book-sales"]
-console.log(data)
 
 /*
 This component represents every book in the books database.
 */
 const Books = (props) => {
-
-  //const [visibility, setVisibility] = useState(false);
+  const [data, loading, error] = useData('/'); 
+  if (error) return <h1>{error}</h1>;
+  if (loading) return <h1>Loading the books...</h1>
+  console.log(data["book-sales"]);
+  
   if (props.visibility) {
     return (
-      data.map(book => { return(
+      data["book-sales"].map(book => { return(
         <Book book={book}/>
       )}))
   }
@@ -131,8 +127,40 @@ const Body = () => {
   )
 }
 
+// Update Functions (more to come)
+// currently it only updates the first book
+const rename = async (name) => {
+  if (name) {
+    try {
+      await setData(`/book-sales/${0}/class`, name);
+    } catch (error) {
+      alert(error);
+    }
+  }
+};
+
+// Post a new Book
+const addBook = async(Book) =>{
+  if (Book) {
+    try {
+      addData(`/book-sales`, Book);
+    } catch (error) {
+      alert(error);
+    }
+  }
+}
+let newBook = {
+  "title" : "Chinese"
+}
+
+addBook(newBook);
+
 function App() {
-  
+  // Prints the content in the database
+  // const [data, loading, error] = useData('/'); 
+  // if (error) return <h1>{error}</h1>;
+  // if (loading) return <h1>Loading the books...</h1>
+  //console.log(data["book-sales"]);
   return (
     <div className="App">
        
