@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState} from "react";
 import { useData, setData, addData } from './utilities/firebase.js';
+import Title from './Title.js';
 
 /*
 This component represents every book in the books database.
@@ -27,10 +28,22 @@ const Book = (props) => {
   return (
     <p>
     {props.book["title"]},
-      <img src={props.book["url"]}/>
+    <br></br>
+      <img src={props.book["url"]} width="100" height="150"/>
+      <br></br>
+      
     {props.book["class"]},
+    <br></br>
     {props.book["seller-name"]},
+    <br></br>
     {props.book["seller-phone"]},
+    <br></br>
+    {props.book["price"]}
+    <br></br>
+   <a href="mailto:mail@address.com?subject=just-a-subject">Contact</a>
+   <br></br>
+   <p></p>
+ 
     {props.book["price"]}
     </p>
   )
@@ -150,8 +163,14 @@ function App() {
   //console.log(data["book-sales"]);
   return (
     <div className="App">
-      <Body/>
+       
+     <Title/>
+        <Books/>
+        <Body/>
     </div>
   );
 }
+
 export default App;
+
+
