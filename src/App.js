@@ -9,11 +9,15 @@ console.log(data)
 /*
 This component represents every book in the books database.
 */
-const Books = () => {
-  return (
-    data.map(book => { return(
-      <Book book={book}/>
-    )}))
+const Books = (props) => {
+
+  //const [visibility, setVisibility] = useState(false);
+  if (props.visibility) {
+    return (
+      data.map(book => { return(
+        <Book book={book}/>
+      )}))
+  }
 }
 
 /*
@@ -40,14 +44,14 @@ overlay on top
 css
 
 */ 
-const Form = () => {
+const Form = (props) => {
 // add inputs to function for onSubmit
-  const [visibility, setVisibility] = useState(false);
-  if (visibility) {
+  //const [visibility, setVisibility] = useState(false);
+  if (props.visibility) {
     return(
       <div>
-      <button onClick={() => setVisibility(false)}>X</button>
-      <form onSubmit={() => hideForm()}> 
+      <button onClick={props.handleClick}>X</button>
+      <form>
         <label>
           Title:
           <input type="text" title="title"/>
@@ -82,16 +86,38 @@ const Form = () => {
   }
   else {
     return (
-      <div className="listBook"><button onClick={() => setVisibility(true)}>List a Book</button></div>
+      <div className="listBook"><button onClick={props.handleClick}>List a Book</button></div>
     )
   }
+}
+
+const Body = () => {
+  // bookVisibility is if the books are visible
+  // if books are visible, form is not visible
+  // formVisibility = !bookVisibility
+  const [bookVisibility, setBookVisibility] = useState(true);
+  // how to pass state down to children?
+  const handleClick = () => {
+    if(bookVisibility) {
+      setBookVisibility(false);
+    } else {
+      setBookVisibility(true);
+    }
+  }
+  // pass down handleClick function
+  
+  return (
+    <div>
+      <Form handleClick={handleClick} visibility={!bookVisibility}/>
+      <Books visibility={bookVisibility}/>
+    </div>
+  )
 }
 
 function App() {
   return (
     <div className="App">
-        <Form/>
-        <Books/>
+      <Body/>
     </div>
   );
 }
