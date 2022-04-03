@@ -43,8 +43,7 @@ const Book = (props) => {
    <a href="mailto:mail@address.com?subject=just-a-subject">Contact</a>
    <br></br>
    <p></p>
- 
-    {props.book["price"]}
+
     </p>
   )
 }
