@@ -6,12 +6,19 @@ let data = require('./book.json')
 data = data["book-sales"]
 console.log(data)
 
+/*
+This component represents every book in the books database.
+*/
 const Books = () => {
   return (
     data.map(book => { return(
       <Book book={book}/>
     )}))
 }
+
+/*
+This component represents an individual book and its properties.
+*/
 const Book = (props) => {
   return (
     <p>
@@ -25,10 +32,14 @@ const Book = (props) => {
   )
 }
 
-const hideForm = () => {
+/* This component dipslays a form that can be used to 
+list a book. There are buttons that control the visibility (List Book and X)
 
-}
+THINGS TO DO IN THE FUTURE:
+overlay on top 
+css
 
+*/ 
 const Form = () => {
 // add inputs to function for onSubmit
   const [visibility, setVisibility] = useState(false);
