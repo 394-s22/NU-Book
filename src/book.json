@@ -1,7 +1,8 @@
 {
     "book-sales": [
         {
-        "title": "Modern Chinese 1A",
+        "title": "Modern Chinese",
+        "edition": "1A",
         "url": "https://www.chinasprout.com/store/media/BLA022L01-1.jpg",
         "class": "Chinese 111-1",
         "seller-name": "Sydney Smith",
@@ -9,7 +10,8 @@
         "price": "30"
         },
         {
-        "title": "Modern Chinese 2A",
+        "title": "Modern Chinese",
+        "edition": "2A",
         "url": "https://cypressbooks.com/bookimages/9781845700379a.jpg",
         "class": "Chinese 111-3",
         "seller-name": "Teagan Smith",
