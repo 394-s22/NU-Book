@@ -1,6 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from "react";
+/*
+import Title from './Title.js';
+*/
+import * as React from 'react';
+import Title from './Title.js';
+import {useState} from "react";
 
 let data = require('./book.json')
 data = data["book-sales"]
@@ -27,10 +32,22 @@ const Book = (props) => {
   return (
     <p>
     {props.book["title"]},
-      <img src={props.book["url"]}/>
+    <br></br>
+      <img src={props.book["url"]} width="100" height="150"/>
+      <br></br>
+      
     {props.book["class"]},
+    <br></br>
     {props.book["seller-name"]},
+    <br></br>
     {props.book["seller-phone"]},
+    <br></br>
+    {props.book["price"]}
+    <br></br>
+   <a href="mailto:mail@address.com?subject=just-a-subject">Contact</a>
+   <br></br>
+   <p></p>
+ 
     {props.book["price"]}
     </p>
   )
@@ -115,10 +132,17 @@ const Body = () => {
 }
 
 function App() {
+  
   return (
     <div className="App">
-      <Body/>
+       
+     <Title/>
+        <Books/>
+        <Body/>
     </div>
   );
 }
+
 export default App;
+
+
