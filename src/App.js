@@ -25,9 +25,7 @@ const dictToList = (dict) =>{
     let arr = [];
     Object.keys(dict).forEach(key => 
       arr.push(dict[key]))  
-
     return arr;
-
 }
 
 /*
@@ -52,8 +50,6 @@ const Book = (props) => {
    <a href="mailto:mail@address.com?subject=just-a-subject">Contact</a>
    <br></br>
    <p></p>
- 
-    {props.book["price"]}
     </p>
   )
 }
@@ -76,32 +72,41 @@ const Form = (props) => {
       <form>
         <label>
           Title:
-          <input type="text" title="title"/>
+          <input type="text" name="title"/>
         </label>
         <label>
           Edition:
-          <input type="text" edition="edition"/>
+          <input type="text" name="edition"/>
         </label>
         <label>
           Department:
-          <input type="text" department="department"/>
+          <input type="text" name="department"/>
         </label>
         <label>
           Class number:
-          <input type="text" class-number="class-number"/>
+          <input type="text" name="class-number"/>
         </label>
         <label>
           Your name:
-          <input type="text" seller-name="seller-name"/>
+          <input type="text" name="seller-name"/>
         </label>
         <label>
           Phone number:
-          <input type="number" seller-phone="seller-phone"/>
+          <input type="number" name="seller-phone"/>
         </label>
         <label>
           Price:
-          <input type="number" price="price"/>
+          <input type="number" name="price"/>
         </label>
+        <label>
+          Email:
+          <input type="text" name= "email"/>
+        </label>
+        <label>
+          Image:
+          <input type="url" name = "url"/>
+        </label>
+        <button type ="submit" value = "Submit">Submit</button>
       </form>
       </div>
     ); // HTML that includes X button

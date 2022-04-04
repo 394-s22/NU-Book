@@ -25,6 +25,7 @@ const analytics = getAnalytics(app);
 const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
 
+//GET request (get the data from firebase)
 export const useData = (path, transform) => {
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
@@ -50,10 +51,12 @@ export const useData = (path, transform) => {
     return [data, loading, error];
   };
 
+  //POST request (add stuff to the database)
   export const addData = (path, value) =>{
     push(ref(database, path), value);
   }
 
+  //PATCH request (change stuff in the database)
   export const setData = (path, value) => (
     set(ref(database, path), value)
   );
