@@ -69,7 +69,7 @@ const Form = (props) => {
     return(
       <div>
       <button onClick={props.handleClick}>X</button>
-      <form>
+      <form id="book-form">
         <label>
           Title:
           <input type="text" name="title"/>
@@ -106,7 +106,7 @@ const Form = (props) => {
           Image:
           <input type="url" name = "url"/>
         </label>
-        <button type ="submit" value = "Submit">Submit</button>
+        <button type ="submit" value = "Submit" onClick = {props.postData} >Submit</button>
       </form>
       </div>
     ); // HTML that includes X button
@@ -117,7 +117,26 @@ const Form = (props) => {
     )
   }
 }
+const postData = () => {
+  const bookForm = document.getElementById("book-form");
+  const formResults = {
+    "title": bookForm.elements["title"].value,
+    "edition": bookForm.elements["edition"].value,
+    "url": bookForm.elements["url"].value,
+    "department": bookForm.elements["department"].value,
+    "class_num": bookForm.elements["class_num"].value,
+    "seller-name": bookForm.elements["seller-name"].value,
+    "seller-phone": bookForm.elements["seller-phone"].value,
+    "price": bookForm.elements["price"].value,
+    "email": bookForm.elements["email"].value
+    };
+  console.log("title")
+  console.log(bookForm.elements["title"].value)
+  console.log("bookForm")
+  console.log(bookForm)
+  addBook(formResults);
 
+}
 const Body = () => {
   // bookVisibility is if the books are visible
   // if books are visible, form is not visible
@@ -135,7 +154,7 @@ const Body = () => {
   
   return (
     <div>
-      <Form handleClick={handleClick} visibility={!bookVisibility}/>
+      <Form handleClick={handleClick} visibility={!bookVisibility} postData={postData}/>
       <Books visibility={bookVisibility}/>
     </div>
   )
