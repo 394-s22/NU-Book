@@ -11,7 +11,6 @@ const Books = (props) => {
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
-  console.log(data["book-sales"]);
   const ndata = dictToList(data["book-sales"]);
   if (props.visibility) {
     return (
@@ -47,7 +46,7 @@ const Book = (props) => {
     <br></br>
     {props.book["price"]}
     <br></br>
-   <a href="mailto:mail@address.com?subject=just-a-subject">Contact</a>
+   <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
    <br></br>
    <p></p>
     </p>
@@ -72,41 +71,42 @@ const Form = (props) => {
       <form id="book-form">
         <label>
           Title:
-          <input type="text" name="title"/>
+          <input type="text" name="title" value='a'/>
         </label>
         <label>
           Edition:
-          <input type="text" name="edition"/>
+          <input type="text" name="edition" value='a'/>
         </label>
         <label>
           Department:
-          <input type="text" name="department"/>
+          <input type="text" name="department" value='a'/>
         </label>
         <label>
           Class number:
-          <input type="text" name="class-number"/>
+          <input type="text" name="class-number" value='1'/>
         </label>
         <label>
           Your name:
-          <input type="text" name="seller-name"/>
+          <input type="text" name="seller-name" value='a'/>
         </label>
         <label>
           Phone number:
-          <input type="number" name="seller-phone"/>
+          <input type="number" name="seller-phone" value='1'/>
         </label>
         <label>
           Price:
-          <input type="number" name="price"/>
+          <input type="number" name="price"  value='1'/>
         </label>
         <label>
           Email:
-          <input type="text" name= "email"/>
+          <input type="text" name= "email" value='a'/>
         </label>
         <label>
           Image:
-          <input type="url" name = "url"/>
+          <input type="url" name = "url" value='https://espn.com'/>
         </label>
-        <button type ="submit" value = "Submit" onClick = {props.postData} >Submit</button>
+        <button id="submit_button" type="button" 
+        value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</button>
       </form>
       </div>
     ); // HTML that includes X button
@@ -117,25 +117,22 @@ const Form = (props) => {
     )
   }
 }
-const postData = () => {
+
+const postData = (handleClick) => {
   const bookForm = document.getElementById("book-form");
   const formResults = {
     "title": bookForm.elements["title"].value,
     "edition": bookForm.elements["edition"].value,
     "url": bookForm.elements["url"].value,
     "department": bookForm.elements["department"].value,
-    "class_num": bookForm.elements["class_num"].value,
+    "class-number": bookForm.elements["class-number"].value,
     "seller-name": bookForm.elements["seller-name"].value,
     "seller-phone": bookForm.elements["seller-phone"].value,
     "price": bookForm.elements["price"].value,
     "email": bookForm.elements["email"].value
     };
-  console.log("title")
-  console.log(bookForm.elements["title"].value)
-  console.log("bookForm")
-  console.log(bookForm)
   addBook(formResults);
-
+  handleClick()
 }
 const Body = () => {
   // bookVisibility is if the books are visible
@@ -143,8 +140,10 @@ const Body = () => {
   // formVisibility = !bookVisibility
   const [bookVisibility, setBookVisibility] = useState(true);
   // how to pass state down to children?
+
   const handleClick = () => {
     if(bookVisibility) {
+      console.log(document.getElementById("submit_button"))
       setBookVisibility(false);
     } else {
       setBookVisibility(true);
