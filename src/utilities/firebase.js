@@ -26,6 +26,9 @@ const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
 
 //GET request (get the data from firebase)
+//path = '/book-sales'
+//transform is not necessary
+//return a JSON object
 export const useData = (path, transform) => {
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
