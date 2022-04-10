@@ -22,14 +22,14 @@ import {signInWithGoogle, useUserState, signOut} from './utilities/firebase.js';
 import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup } from 'firebase/auth';
 
 const LoginButton = () => (
-  <button className="btn btn-secondary btn-sm"
+  <button className="btn-secondary btn-sm"
       onClick={() => signInWithGoogle()}>
     Sign In
   </button>
 );
 
 const SignOutButton = () => (
-  <button className="btn btn-secondary btn-sm"
+  <button className="btn-secondary btn-sm"
       onClick={() => signOut()}>
     Sign Out
   </button>
