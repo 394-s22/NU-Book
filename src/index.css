@@ -25,6 +25,7 @@ new!
 p{
   border:  4px solid #410ca3;
 	box-shadow: 1px 6px 9px rgba(0, 0, 0, .4);
+  grid-template-columns: auto;
 }
 
 /* we could make this into a button */
@@ -41,6 +42,7 @@ h1{
   font-size: 35px;
   color: #410ca3;
 }
+
 
 navbar{
 	overflow: hidden;
