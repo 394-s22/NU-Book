@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 22rem));
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 40% 10% 20% 30%;
+  /* align-items: center; */
+  /* padding-left: 25%;
+  padding-right: 25%; */
+}
+
+.book-image {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  display: flex;
+}
+
+.book-info {
+  grid-column-start: 3;
+  grid-column-end: 3;
+  display: flex;
+  text-align: left;
+}
