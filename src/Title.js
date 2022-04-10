@@ -22,7 +22,8 @@ import Button from "@mui/material/Button";
 const Title = () => {
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar position="fixed" style={{ background: " #410ca3" }}>
+
         <Toolbar color="purple">
           <Typography variant="h6">NU Book</Typography>
           <Button color="inherit">Login</Button>
