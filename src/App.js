@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState} from "react";
-import { useData, setData, addData } from './utilities/firebase.js';
+import { useData, setData, addData, useUserState } from './utilities/firebase.js';
 import Title from './Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -44,7 +44,7 @@ const Book = (props) => {
     <br></br>
     Phone: {props.book["seller-phone"]}
     <br></br>
-    Price: {props.book["price"]}
+    Price: ${props.book["price"]}
     <br></br>
    <button  type = "button" className = "btn btn-primary"><a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}></a>Contact </button>
    <br></br>
@@ -62,6 +62,7 @@ css
 
 */ 
 const Form = (props) => {
+  const [user] = useUserState();
 // add inputs to function for onSubmit
   //const [visibility, setVisibility] = useState(false);
   if (props.visibility) {
@@ -128,7 +129,7 @@ const Form = (props) => {
          <br></br>
          <br></br>
          <br></br>
-        <button type = "button" className = "btn btn-primary" onClick={props.handleClick}>List a Book</button>
+        <button type = "button" className = "btn btn-primary" onClick={!user ? ()=> alert("you must sign in first to list a book"): props.handleClick}>List a Book</button>
       
       
       </div>
