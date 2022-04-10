@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState} from "react";
 import { useData, setData, addData } from './utilities/firebase.js';
 import Title from './Title.js';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 /*
 This component represents every book in the books database.
@@ -33,20 +34,19 @@ This component represents an individual book and its properties.
 const Book = (props) => {
   return (
     <p>
-    {props.book["title"]},
+    Title:  {props.book["title"]}
     <br></br>
       <img src={props.book["url"]} width="100" height="150"/>
       <br></br>
       
-    {props.book["class"]},
+    {props.book["class"]}
+    Seller: {props.book["seller-name"]}
     <br></br>
-    {props.book["seller-name"]},
+    Phone: {props.book["seller-phone"]}
     <br></br>
-    {props.book["seller-phone"]},
+    Price: {props.book["price"]}
     <br></br>
-    {props.book["price"]}
-    <br></br>
-   <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
+   <button  type = "button" className = "btn btn-primary"><a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}></a>Contact </button>
    <br></br>
    <p></p>
     </p>
@@ -67,7 +67,7 @@ const Form = (props) => {
   if (props.visibility) {
     return(
       <div>
-      <button onClick={props.handleClick}>X</button>
+      <button type = "button" className = "btn btn-primary" onClick={props.handleClick}>X</button>
       <form id="book-form">
         <label>
           Title:
@@ -114,7 +114,7 @@ const Form = (props) => {
           <input type="url" name = "url" />
         </label>
         <br></br>
-        <button id="submit_button" type="button" 
+        <button className = "btn btn-primary" id="submit_button" type="button" 
         value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</button>
       </form>
       </div>
@@ -128,7 +128,7 @@ const Form = (props) => {
          <br></br>
          <br></br>
          <br></br>
-        <button onClick={props.handleClick}>List a Book</button>
+        <button type = "button" className = "btn btn-primary" onClick={props.handleClick}>List a Book</button>
       
       
       </div>
