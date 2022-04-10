@@ -36,7 +36,7 @@ This component represents an individual book and its properties.
 */
 const Book = (props) => {
   return (
-    <div class="card" style={{width: '22rem', padding: '25px;'}}>
+    <div class="card" style={{width: '22rem', padding: '15px'}}>
       <div class="row no-gutters">
         <div class="col-md-4">
         <img src={props.book["url"]} width="100" height="150"/>
@@ -57,46 +57,8 @@ const Book = (props) => {
         </div>
       </div> 
     </div>
-
-    // <div className = "book">
-    //   <div className = "book-image">
-    //   <img src={props.book["url"]} width="100" height="150"/>
-    //   </div>
-
-    //   <div className = "book-info">
-    //     <p>
-    //       {props.book["title"]}
-    //       {props.book["class"]}
-    //       <br></br>
-    //       {props.book["seller-name"]}
-    //       <br></br>
-    //       ${props.book["price"]}
-    //       <br></br>
-    //       <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
-    //     </p>
-    //   </div>
-    // </div>
   )
 }
-
-/* <p>
-      {props.book["title"]},
-      <br></br>
-        <img src={props.book["url"]} width="100" height="150"/>
-        <br></br>
-        
-      {props.book["class"]},
-      <br></br>
-      {props.book["seller-name"]},
-      <br></br>
-      {props.book["seller-phone"]},
-      <br></br>
-      {props.book["price"]}
-      <br></br>
-    <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
-    <br></br>
-    <p></p>
-      </p> */ // original book HTML
 
 /* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
