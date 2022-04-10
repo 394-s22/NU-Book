@@ -197,8 +197,8 @@ const Form = (props) => {
          <br></br>
          <br></br>
          <br></br>
-        
-        <button type = "button" className = "btn-primary" onClick={!user ? ()=> alert("you must sign in first to list a book"): props.handleClick}>List a Book</button>
+         {/* !user ? ()=> alert("you must sign in first to list a book"): */}
+        <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button>
         <button type = "button" className = "btn-secondary" onClick={ props.handleClickSearch}>Search for a Book</button>
       
       </div>
