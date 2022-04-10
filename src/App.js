@@ -3,6 +3,7 @@ import './App.css';
 import React, {useState} from "react";
 import { useData, setData, addData } from './utilities/firebase.js';
 import Title from './Title.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*
 This component represents every book in the books database.
@@ -13,10 +14,13 @@ const Books = (props) => {
   if (loading) return <h1>Loading the books...</h1>
   const ndata = dictToList(data["book-sales"]);
   if (props.visibility) {
-    return (
-      ndata.map(book => { return(
+    return ( // added class
+      <div className="books">
+        {ndata.map(book => { return(
         <Book book={book}/>
-      )}))
+        )})}
+      </div>
+    )
   }
 }
 
@@ -32,28 +36,55 @@ This component represents an individual book and its properties.
 */
 const Book = (props) => {
   return (
-    <p>
-    {props.book["title"]},
-    <br></br>
-      <img src={props.book["url"]} width="100" height="150"/>
-      <br></br>
-      
-    {props.book["class"]},
-    <br></br>
-    {props.book["seller-name"]},
-    <br></br>
-    {props.book["seller-phone"]},
-    <br></br>
-    {props.book["price"]}
-    <br></br>
-   <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
-   <br></br>
-   <p></p>
-    </p>
+    <div class="card" style={{width: '18rem'}}>
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p className="card-text">text</p>
+        
+      </div>  
+    </div>
+
+    // <div className = "book">
+    //   <div className = "book-image">
+    //   <img src={props.book["url"]} width="100" height="150"/>
+    //   </div>
+
+    //   <div className = "book-info">
+    //     <p>
+    //       {props.book["title"]}
+    //       {props.book["class"]}
+    //       <br></br>
+    //       {props.book["seller-name"]}
+    //       <br></br>
+    //       ${props.book["price"]}
+    //       <br></br>
+    //       <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
+    //     </p>
+    //   </div>
+    // </div>
   )
 }
 
-/* This component dipslays a form that can be used to 
+/* <p>
+      {props.book["title"]},
+      <br></br>
+        <img src={props.book["url"]} width="100" height="150"/>
+        <br></br>
+        
+      {props.book["class"]},
+      <br></br>
+      {props.book["seller-name"]},
+      <br></br>
+      {props.book["seller-phone"]},
+      <br></br>
+      {props.book["price"]}
+      <br></br>
+    <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a>
+    <br></br>
+    <p></p>
+      </p> */ // original book HTML
+
+/* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
 
 THINGS TO DO IN THE FUTURE:
