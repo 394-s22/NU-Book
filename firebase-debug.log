@@ -1,0 +1,36 @@
+[debug] [2022-04-10T22:21:17.643Z] ----------------------------------------------------------------------
+[debug] [2022-04-10T22:21:17.646Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-04-10T22:21:17.646Z] CLI Version:   10.5.0
+[debug] [2022-04-10T22:21:17.646Z] Platform:      darwin
+[debug] [2022-04-10T22:21:17.646Z] Node Version:  v17.6.0
+[debug] [2022-04-10T22:21:17.657Z] Time:          Sun Apr 10 2022 17:21:17 GMT-0500 (Central Daylight Time)
+[debug] [2022-04-10T22:21:17.658Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-10T22:21:17.662Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-04-10T22:21:17.845Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-10T22:21:17.846Z] > authorizing via signed-in user (davidcheung231@gmail.com)
+[debug] [2022-04-10T22:21:17.846Z] [iam] checking project nu-book-79ca9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-10T22:21:17.848Z] > refreshing access token with scopes: []
+[debug] [2022-04-10T22:21:17.849Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-04-10T22:21:18.088Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Sun, 10 Apr 2022 22:21:18 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-04-10T22:21:18.141Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/nu-book-79ca9:testIamPermissions [none]
+[debug] [2022-04-10T22:21:18.142Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nu-book-79ca9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-10T22:21:18.153Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-04-10T22:21:18.153Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-04-10T22:21:18.406Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/nu-book-79ca9:testIamPermissions 200
+[debug] [2022-04-10T22:21:18.407Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/nu-book-79ca9:testIamPermissions {}
+[debug] [2022-04-10T22:21:18.408Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project nu-book-79ca9:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2022-04-10T22:21:18.409Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nu-book-79ca9 [none]
+[debug] [2022-04-10T22:21:18.638Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nu-book-79ca9 403
+[debug] [2022-04-10T22:21:18.639Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nu-book-79ca9 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2022-04-10T22:21:18.640Z] HTTP Error: 403, The caller does not have permission
+[debug] [2022-04-10T22:21:18.740Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at module.exports (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:47:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project nu-book-79ca9. Please make sure the project exists and your account has permission to access it.
