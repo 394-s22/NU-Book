@@ -1,55 +1,31 @@
 
-// import React from 'react'
+import React from 'react'
+import { BsSearch } from 'react-icons/bs';
 
-// function Title() {
-//   return (
-//     <div id="navbar">
-//       <h1>NU Book</h1>
-//     </div>
-//   )
-// }
-
-
-// export default Title
-
-
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import {signInWithGoogle, useUserState, signOut} from './utilities/firebase.js';
-import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup } from 'firebase/auth';
-
-const LoginButton = () => (
-  <button className="btn-secondary btn-sm"
-      onClick={() => signInWithGoogle()}>
-    Sign In
-  </button>
-);
-
-const SignOutButton = () => (
-  <button className="btn-secondary btn-sm"
-      onClick={() => signOut()}>
-    Sign Out
-  </button>
-);
-
-const Title = () => {
-  const [user] = useUserState();
+function Title() {
   return (
-    <div>
-      <AppBar position="fixed" style={{ background: " #410ca3" }}>
-
-        <Toolbar color="purple">
-          <Typography variant="h6">NU Book</Typography>
-          { user ? <SignOutButton /> : <LoginButton /> }
-        </Toolbar>
-      </AppBar>
+  <nav class="navbar navbar-light" style={{backgroundColor: "#e3f2fd"}} >
+    <span class="navbar-brand mb-0 h1">NU Book</span>
+    <a class="nav-link" href="#">List a Book</a>
+    <div class="nav navbar-nav navbar-right">
+    <form class="mx-2 my-auto">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search" placeholder="Search" />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit"><BsSearch /></button>
+                </div>
+            </div>
+        </form>
     </div>
-  );
-};
-export default Title;
+  </nav>
+  )
+}
+
+
+export default Title
+
+
+
 /*
 function StackScreen() {
     return (
