@@ -45,7 +45,7 @@ export const filterData =  (handleClickSearch, data) =>{
 
 export const Form = (props) => {
     const [user] = useUserState();
-    console.log(props.data);
+    console.log(props.data); // remove?
   // add inputs to function for onSubmit
     //const [visibility, setVisibility] = useState(false);
     if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
@@ -58,7 +58,7 @@ export const Form = (props) => {
         <form id="book-form">
           <label>
             Title:
-            <input type="text" name="title"/>
+            <input type="text" name="title" />
           </label>
           <br></br>
           <label>
@@ -68,12 +68,12 @@ export const Form = (props) => {
           <br></br>
           <label>
             Department:
-            <input type="text" name="department"/>
+            <input type="text" name="department" />
           </label>
           <br></br>
           <label>
             Class number:
-            <input type="text" name="class-number"/>
+            <input type="text" name="class-number" />
           </label>
           <br></br>
           <label>
@@ -88,7 +88,7 @@ export const Form = (props) => {
           <br></br>
           <label>
             Price:
-            <input type="number" name="price"/>
+            <input type="number" name="price" />
           </label>
           <br></br>
           <label>

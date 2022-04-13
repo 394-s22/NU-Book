@@ -19,8 +19,13 @@ const postData = (handleClick) => {
     "price": bookForm.elements["price"].value,
     "email": bookForm.elements["email"].value
     };
-  addBook(formResults);
-  handleClick()
+  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"]) {
+    alert("Title, Department, Class number, and Price are required inputs.");
+  }
+  else {
+    addBook(formResults);
+    handleClick()
+  }
 }
 
 const Body = (props) => {
