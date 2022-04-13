@@ -20,9 +20,16 @@ const filterData =  (data) =>{
       "price": bookForm.elements["price"].value,
       "email": bookForm.elements["email"].value
       };
-  
-      let lst = dictToList(data["book-sales"]);
-      lst = lst.filter(book => book["title"] === formResults["title"]);
+      //adding logic for multiple categories, still just exact matches
+      //per category, but the filtered books will be for any exact matches
+      const allBooks = dictToList(data["book-sales"]);
+      const exactFields = ["title", "department", "class-number"];
+      let lst = [];
+      exactFields.forEach((field) => {
+        let fieldSpecificBooks = allBooks.filter(book =>
+          book[field] === formResults[field] && formResults[field] != "");
+        lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
+      });
       console.log(lst); 
       return lst;
   }
