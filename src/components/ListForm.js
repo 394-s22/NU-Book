@@ -17,31 +17,6 @@ export const dictToList = (dict) =>{
     return arr;
 }
 
-export const filterData =  (handleClickSearch, data) =>{
-    const bookForm = document.getElementById("book-form");
-    const formResults = {
-      "title": bookForm.elements["title"].value,
-      "edition": bookForm.elements["edition"].value,
-      "url": bookForm.elements["url"].value,
-      "department": bookForm.elements["department"].value,
-      "class-number": bookForm.elements["class-number"].value,
-      "seller-name": bookForm.elements["seller-name"].value,
-      "seller-phone": bookForm.elements["seller-phone"].value,
-      "price": bookForm.elements["price"].value,
-      "email": bookForm.elements["email"].value
-      };
-  
-      let lst = dictToList(data["book-sales"]);
-      lst = lst.filter(book => book["title"] === formResults["title"]);
-      console.log(lst);
-      return (
-          lst.map(book => { return(
-            <div>
-            <Book book={book}/>
-            </div>
-          )})
-      )   
-  }
 
 export const Form = (props) => {
     const [user] = useUserState();
@@ -159,7 +134,7 @@ export const Form = (props) => {
        </label>
        <br></br>
        <button className = "btn-primary" id="submit_button" type="button" 
-       value="Submit" onClick={() => {props.filterData(props.handleClickSearch, props.data)}}>Search</button>
+       value="Submit" onClick={props.handleClickSearch}>Search</button>
      </form>
      </div>
       )
