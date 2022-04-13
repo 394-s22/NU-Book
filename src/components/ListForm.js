@@ -20,19 +20,20 @@ export const dictToList = (dict) =>{
 
 export const Form = (props) => {
     const [user] = useUserState();
-    console.log(props.data);
+    console.log(props.data); // remove?
   // add inputs to function for onSubmit
     //const [visibility, setVisibility] = useState(false);
-    if (props.visibility) {
+    if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       return(
         <div>
+          <br></br>
            <br></br>
            <br></br>
         <button type = "button" className = "btn-primary" onClick={props.handleClick}>X</button>
         <form id="book-form">
           <label>
             Title:
-            <input type="text" name="title"/>
+            <input type="text" name="title" />
           </label>
           <br></br>
           <label>
@@ -42,12 +43,12 @@ export const Form = (props) => {
           <br></br>
           <label>
             Department:
-            <input type="text" name="department"/>
+            <input type="text" name="department" />
           </label>
           <br></br>
           <label>
             Class number:
-            <input type="text" name="class-number"/>
+            <input type="text" name="class-number" />
           </label>
           <br></br>
           <label>
@@ -62,7 +63,7 @@ export const Form = (props) => {
           <br></br>
           <label>
             Price:
-            <input type="number" name="price"/>
+            <input type="number" name="price" />
           </label>
           <br></br>
           <label>
@@ -84,6 +85,7 @@ export const Form = (props) => {
     else if(props.searchVisibility){
       return(
         <div>
+        <br></br>
         <br></br>
         <br></br>
      <button type = "button" className = "btn-primary" onClick={props.handleClickSearch}>X</button>
