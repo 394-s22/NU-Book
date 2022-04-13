@@ -48,9 +48,10 @@ export const Form = (props) => {
     console.log(props.data);
   // add inputs to function for onSubmit
     //const [visibility, setVisibility] = useState(false);
-    if (props.visibility) {
+    if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       return(
         <div>
+          <br></br>
            <br></br>
            <br></br>
         <button type = "button" className = "btn-primary" onClick={props.handleClick}>X</button>
@@ -109,6 +110,7 @@ export const Form = (props) => {
     else if(props.searchVisibility){
       return(
         <div>
+        <br></br>
         <br></br>
         <br></br>
      <button type = "button" className = "btn-primary" onClick={props.handleClickSearch}>X</button>
