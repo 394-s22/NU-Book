@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import { useData, setData, addData, useUserState } from './utilities/firebase.js';
 import Title from './Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form, filterData} from './components/ListForm.js';
+import {Form} from './components/ListForm.js';
 import Books from './components/Books';
 
 const postData = (handleClick) => {
@@ -52,7 +52,7 @@ const Body = (props) => {
 
   return (
     <div>
-      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={!searchVisibility} filterData = {filterData}postData={postData} data = {props.data}/>
+      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={!searchVisibility}postData={postData} data = {props.data}/>
       {/* <SearchForm handleClick={handleClickSearch} visibility={!bookVisibility} postData={postData}/> */}
       <Books  visibility={bookVisibility && searchVisibility}/>
     </div>
