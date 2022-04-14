@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState} from "react";
 import { useData, setData, addData, useUserState } from './utilities/firebase.js';
-import Title from './Title.js';
+import Title from './components/Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from './components/ListForm.js';
 import Books from './components/Books';
