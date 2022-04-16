@@ -42,6 +42,7 @@ const Body = (props) => {
       setBookVisibility(false);
     } else {
       setBookVisibility(true);
+      
     }
   }
   // pass down handleClick function
@@ -52,7 +53,10 @@ const Body = (props) => {
       setSearchVisibility(false);
     } else {
       setSearchVisibility(true);
+      
     }
+    
+
   }
 
   return (
@@ -98,6 +102,7 @@ function App() {
        
      <Title/>
         <Books/>
+
         <Body data ={data}/>
     </div>
   );
