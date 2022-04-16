@@ -59,6 +59,7 @@ export const Form = (props) => {
               <Button variant='primary' id="submit_button" type="button" 
               value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
             </form> 
+            {/* change the on-click function -- SHOULD NOT BE POST */}
           </div>
           );
       }
@@ -69,59 +70,40 @@ export const Form = (props) => {
              <br></br>
              <br></br>
           <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
-          {/* <button type = "button" className = "btn-primary" onClick={props.handleClick}>X</button> */}
           <form id="list-form">
             <label>
-              {/* Title:
-              <input type="text" name="title" /> */}
               <input class="form-control" type="text" name="title" placeholder="Title"></input>
             </label>
             <br></br>
             <label>
-              {/* Edition:
-              <input type="text" name="edition"/> */}
               <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
             </label>
             <br></br>
             <label>
-              {/* Department:
-              <input type="text" name="department" /> */}
               <input class="form-control" type="text" name="department" placeholder="Department"></input>
             </label>
             <br></br>
             <label>
-              {/* Class number:
-              <input type="text" name="class-number" /> */}
               <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
             </label>
             <br></br>
             <label>
-              {/* Your name:
-              <input type="text" name="seller-name"/> */}
               <input class="form-control" type="text" name="seller-name" placeholder="Your name"></input>
             </label>
             <br></br>
             <label>
-              {/* Phone number:
-              <input type="number" name="seller-phone"/> */}
               <input class="form-control" type="number" name="seller-phone" placeholder="Phone number"></input>
             </label>
             <br></br>
             <label>
-              {/* Price:
-              <input type="number" name="price" /> */}
               <input class="form-control" type="number" name="price" placeholder="Price" />
             </label>
             <br></br>
             <label>
-              {/* Email:
-              <input type="text" name= "email" /> */}
               <input class="form-control" type="text" name="email" placeholder="Email" />
             </label>
             <br></br>
             <label>
-              {/* Image:
-              <input type="url" name = "url" /> */}
               <input class="form-control" type="url" name="url" placeholder="Image" />
             </label>
             <br></br>

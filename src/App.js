@@ -7,7 +7,7 @@ import {Form} from './components/ListForm.js';
 import Books from './components/Books';
 
 const postData = (handleClick) => {
-  const bookForm = document.getElementById("book-form");
+  const bookForm = document.getElementById("list-form");
   const formResults = {
     "title": bookForm.elements["title"].value,
     "edition": bookForm.elements["edition"].value,
