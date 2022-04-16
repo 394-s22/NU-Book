@@ -1,7 +1,7 @@
 import { Button } from 'react-bootstrap';
 import { useUserState } from '../utilities/firebase.js';
 import Book from './Book';
-
+import UploadAndDisplayImage from './Upload';
 /* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
 
@@ -89,7 +89,7 @@ export const Form = (props) => {
             <input type="url" name = "url" /> */}
             <input class="form-control" type="url" name="url" placeholder="Image" />
           </label>
-          <br></br>
+          <p className='upload-hint' >You can convert img to url with this link: <a href={"https://imgbb.com"} target = {"_blank"}>ImgBB</a></p>  
           <Button variant='primary' id="submit_button" type="button" 
           value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
         </form>

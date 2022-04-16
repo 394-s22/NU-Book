@@ -1,6 +1,7 @@
 import Book from './Book';
 import { useData } from '../utilities/firebase.js';
 import { dictToList } from './ListForm.js';
+import UploadAndDisplayImage from './Upload';
 /*
 This component represents every book in the books database.
 */
@@ -8,6 +9,7 @@ This component represents every book in the books database.
 
 const filterData =  (data) =>{
   const bookForm = document.getElementById("book-form");
+
   if(bookForm){
     const formResults = {
       "title": bookForm.elements["title"].value,

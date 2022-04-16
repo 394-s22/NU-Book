@@ -28,6 +28,10 @@ p{
   grid-template-columns: auto;
 }
 
+.upload-hint{
+  border: none !important; 
+}
+
 /* we could make this into a button */
 a {
   /* border:  2px solid #410ca3;
