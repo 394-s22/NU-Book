@@ -111,5 +111,16 @@ export const get_user = () => {
 }
 
 export const remove_book_by_key = (key) => {
-  firebase.database().ref(`/book-sales/${key}`).remove()
+  ref(database, `/book-sales/${key}`).remove()
+  console.log('removed?')
+}
+
+
+export const delete_book = (title, email) => {
+  let data = ref(database, `/book-sales`)
+  console.log(data)
+
+  let filtered = data.filter(book => 
+    book['title'] === title && book['email'] === email)
+  remove_book_by_key(filtered[0].Key)
 }
