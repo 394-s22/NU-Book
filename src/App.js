@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import { useData, setData, addData, useUserState } from './utilities/firebase.js';
+import { useData, setData, addData, useUserState, test_user } from './utilities/firebase.js';
 import Title from './components/Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from './components/ListForm.js';
@@ -82,7 +82,8 @@ function App() {
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
-
+  
+  console.log(test_user())
   return (
     <div className="App">
        
