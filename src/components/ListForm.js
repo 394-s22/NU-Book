@@ -32,7 +32,7 @@ export const Form = (props) => {
             <br></br>
             <br></br>
             <br></br>
-            <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
+            <Button variant="primary" size="sm" onClick={props.handleClickSearch}>X</Button>
             <form id="search-form">
               <label>
                 <input class="form-control" type="text" name="title" placeholder="Title"></input>

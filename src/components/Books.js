@@ -6,21 +6,15 @@ This component represents every book in the books database.
 */
 
 
-// books should have access to searchVisibility 
-const filterData =  (data, searchVisibility) =>{
+const filterData =  (data) =>{
   const searchForm = document.getElementById("search-form");
-  if(searchForm){
-    // now we should have search-form and list-form
+  if(searchForm){ // they were actually filtering
     const formResults = {
       "title": searchForm.elements["title"].value,
       "edition": searchForm.elements["edition"].value,
-      "url": searchForm.elements["url"].value,
       "department": searchForm.elements["department"].value,
       "class-number": searchForm.elements["class-number"].value,
-      "seller-name": searchForm.elements["seller-name"].value,
-      "seller-phone": searchForm.elements["seller-phone"].value,
       "price": searchForm.elements["price"].value,
-      "email": searchForm.elements["email"].value
       };
       //adding logic for multiple categories, still just exact matches
       //per category, but the filtered books will be for any exact matches
@@ -29,7 +23,7 @@ const filterData =  (data, searchVisibility) =>{
       let lst = [];
       exactFields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>
-          book[field] === formResults[field] && formResults[field] != "");
+          formResults[field] != "" && book[field] === formResults[field]);
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
 
@@ -37,16 +31,17 @@ const filterData =  (data, searchVisibility) =>{
         // show every original book
         return dictToList(data["book-sales"]);
       }
-    
-      if(!searchVisibility) { // they successfully list a book
-        console.log("here")
-        // show only the book they just listed
-        return [lst[0]]
-      }
       // if they actually are filtering
       return lst;
   }
-  return dictToList(data["book-sales"]);
+  else { // they were listing a book
+    // if(!searchVisibility) { // they successfully list a book
+    //   console.log("here")
+    //   // show only the book they just listed
+    //   return [lst[0]]
+    // }
+    return dictToList(data["book-sales"]);
+  }
 }
 
 // pass search visibility to books
@@ -54,7 +49,7 @@ const Books = (props) => {
     const [data, loading, error] = useData('/'); 
     if (error) return <h1>{error}</h1>;
     if (loading) return <h1>Loading the books...</h1>
-    const ndata = filterData(data, props.searchVisibility);
+    const ndata = filterData(data);
     if (props.visibility) {
       return ( // added class
         <div className="books">
