@@ -12,12 +12,12 @@ const Book = (props) => {
           <div class="card-body">
             <h5 class="card-title">{props.book["title"]}</h5>
             <p className="card-text">
-            {props.book["department"]} {props.book["class-number"]}
-            <br></br>
-            {props.book["seller-name"]}
-            <br></br>
-            ${props.book["price"]}
-            <br></br>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{props.book["department"]} {props.book["class-number"]}</li>
+              <li class="list-group-item">{props.book["seller-name"]}</li>
+              <li class="list-group-item">${props.book["price"]}</li>
+            </ul>
+
             {/* <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a> */}
             <a class="btn btn-outline-success btn-sm" href={"mailto:" + props.book["email"] + "?subject=just-a-subject"} role="button">Contact</a>
             </p>
