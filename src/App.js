@@ -33,7 +33,7 @@ const Body = (props) => {
   // if books are visible, form is not visible
   // formVisibility = !bookVisibility
   const [bookVisibility, setBookVisibility] = useState(true);
-  const [searchVisibility, setSearchVisibility] = useState(true);
+  const [searchVisibility, setSearchVisibility] = useState(false);
   // how to pass state down to children?
 
   const handleClick = () => {
@@ -42,14 +42,15 @@ const Body = (props) => {
   // pass down handleClick function
   
   const handleClickSearch = () => {
+    setBookVisibility(!bookVisibility)
     setSearchVisibility(!searchVisibility)
   }
 
   return (
     <div>
-      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={!searchVisibility} postData={postData} data = {props.data}/>
+      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={searchVisibility} postData={postData} data = {props.data}/>
       {/* <SearchForm handleClick={handleClickSearch} visibility={!bookVisibility} postData={postData}/> */}
-      <Books  visibility={bookVisibility && searchVisibility}/>
+      <Books visibility={bookVisibility && !searchVisibility} searchVisibility={searchVisibility}/>
     </div>
   )
 }
