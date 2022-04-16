@@ -9,7 +9,7 @@ This component represents every book in the books database.
 const filterData =  (data) =>{
   const bookForm = document.getElementById("book-form");
   if(bookForm){
-    console.log("in bookform part")
+    
     const formResults = {
       "title": bookForm.elements["title"].value,
       "edition": bookForm.elements["edition"].value,
@@ -32,6 +32,11 @@ const filterData =  (data) =>{
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
       console.log(lst); 
+
+      if(lst.length==0){
+        return dictToList(data["book-sales"]);
+      }
+
       return lst;
   }
   return dictToList(data["book-sales"]);
