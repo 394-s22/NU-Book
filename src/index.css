@@ -67,6 +67,7 @@ navbar {
 
 .books {
   justify-content: center;
+  grid-gap: 10px;
 }
 
 .card {
