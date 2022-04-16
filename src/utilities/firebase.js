@@ -124,3 +124,4 @@ export const delete_book = (title, email) => {
     book['title'] === title && book['email'] === email)
   remove_book_by_key(filtered[0].Key)
 }
+
