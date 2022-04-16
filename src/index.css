@@ -37,14 +37,21 @@ a {
   color: #230bfa;
 }
 
-h1{
+h1 {
 	font-family: 'Arial', 'Verdana', 'Helvetica', sans-serif;
   font-size: 35px;
   color: #611BBD;
 }
 
+.listBook button {
+  margin-top: 100px;
+  margin-bottom: 25px;
+  color: white;
+  background-color: #611BBD;
+  width: 250px;
+}
 
-navbar{
+navbar {
 	overflow: hidden;
   background-color: #333;
 }
@@ -58,3 +65,78 @@ navbar{
   width: 100%;
 }
 
+.books {
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.card {
+  box-shadow: 1px 6px 9px rgba(0, 0, 0, .4);
+  padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  /*
+  new!
+  */
+  
+  /* div {
+    border:  4px solid #410ca3;
+    
+    box-shadow: 1px 6px 9px rgba(0, 0, 0, .4);
+  } */
+  
+  p{
+    border:  2px solid #611BBD;
+    box-shadow: 1px 6px 9px rgba(0, 0, 0, .4);
+    grid-template-columns: auto;
+  }
+  
+  /* we could make this into a button */
+  a {
+    /* border:  2px solid #410ca3;
+    box-shadow: 1px 6px 9px rgba(0, 0, 0, .4); */
+    font-family: 'Arial', 'Verdana', 'Helvetica', sans-serif;
+    font-size: 15px;
+    color: #230bfa;
+  }
+  
+  h1{
+    font-family: 'Arial', 'Verdana', 'Helvetica', sans-serif;
+    font-size: 35px;
+    color: #611BBD;
+  }
+  
+  
+  navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .content{
+    padding:16 px;
+  }
+  .sticky{
+    position: fixed;
+    top:0;
+    width: 100%;
+  }
+
+  .books {
+    justify-content: center;
+  }
+}
