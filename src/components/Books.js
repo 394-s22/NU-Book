@@ -8,6 +8,7 @@ This component represents every book in the books database.
 
 const filterData =  (data) =>{
   const bookForm = document.getElementById("book-form");
+  let form;
   if(bookForm){
     const formResults = {
       "title": bookForm.elements["title"].value,
