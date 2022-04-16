@@ -9,6 +9,7 @@ This component represents every book in the books database.
 const filterData =  (data) =>{
   const bookForm = document.getElementById("book-form");
   if(bookForm){
+    console.log("in bookform part")
     const formResults = {
       "title": bookForm.elements["title"].value,
       "edition": bookForm.elements["edition"].value,
@@ -41,14 +42,22 @@ const Books = (props) => {
     if (error) return <h1>{error}</h1>;
     if (loading) return <h1>Loading the books...</h1>
     const ndata = filterData(data);
+    console.log("ndata")
+    console.log(ndata)
+    // ^^ issue?
     if (props.visibility) {
+      console.log("books should be visible")
       return ( // added class
         <div className="books">
+          <p>hello</p>
           {ndata.map(book => { return(
           <Book book={book}/>
           )})}
         </div>
       )
+    }
+    else {
+      console.log("books should not be visible")
     }
   }
 

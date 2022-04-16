@@ -33,7 +33,7 @@ export const Form = (props) => {
           <br></br>
            <br></br>
            <br></br>
-        <Button variant="primary" size="sm" onClick={props.handleClick}>x</Button>
+        <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
         {/* <button type = "button" className = "btn-primary" onClick={props.handleClick}>X</button> */}
         <form id="book-form">
           <label>
@@ -92,9 +92,10 @@ export const Form = (props) => {
           <br></br>
           <Button variant='primary' id="submit_button" type="button" 
           value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
-        </form>
+        </form> 
         </div>
       ); // HTML that includes X button
+      // ^^ why is there props.handleClick here
     }
     else if(props.searchVisibility){
       return(
@@ -167,7 +168,7 @@ export const Form = (props) => {
            {/* !user ? ()=> alert("you must sign in first to list a book"): */}
           <Button variant="primary" size="sm" onClick={props.handleClick}>List a Book</Button>
           {/* <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button> */}
-          <Button variant="secondary" size="sm" onClick={props.handleClick}>Search for a Book</Button>
+          <Button variant="secondary" size="sm" onClick={props.handleClickSearch}>Search for a Book</Button>
           {/* <button type = "button" className = "btn-secondary" onClick={ props.handleClickSearch}>Search for a Book</button>       */}
         </div>
       )
