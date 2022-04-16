@@ -58,6 +58,10 @@ navbar {
   width: 100%;
 }
 
+.books {
+  justify-content: center;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     margin: 0;
@@ -117,5 +121,9 @@ navbar {
     position: fixed;
     top:0;
     width: 100%;
+  }
+
+  .books {
+    justify-content: center;
   }
 }
