@@ -109,3 +109,7 @@ export const get_user = () => {
     console.log('user == NULL')
   }
 }
+
+export const remove_book_by_key = (key) => {
+  firebase.database().ref(`/book-sales/${key}`).remove()
+}
