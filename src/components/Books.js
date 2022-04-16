@@ -47,6 +47,8 @@ const Books = (props) => {
     if (error) return <h1>{error}</h1>;
     if (loading) return <h1>Loading the books...</h1>
     const ndata = filterData(data);
+    console.log("ndata")
+    console.log(ndata)
     if (props.visibility) {
       return ( // added class
         <div className="books">

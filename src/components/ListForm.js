@@ -33,8 +33,7 @@ export const Form = (props) => {
           <br></br>
            <br></br>
            <br></br>
-        <Button variant="primary" size="sm" onClick={props.handleClick} >x</Button>
-        
+        <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
         {/* <button type = "button" className = "btn-primary" onClick={props.handleClick}>X</button> */}
         <form id="book-form">
           <label>
@@ -93,10 +92,10 @@ export const Form = (props) => {
           <br></br>
           <Button variant='primary' id="submit_button" type="button" 
           value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
-          
-        </form>
+        </form> 
         </div>
       ); // HTML that includes X button
+      // ^^ why is there props.handleClick here
     }
     else if(props.searchVisibility){
       return(

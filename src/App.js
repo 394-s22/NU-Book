@@ -37,31 +37,17 @@ const Body = (props) => {
   // how to pass state down to children?
 
   const handleClick = () => {
-    if(bookVisibility) {
-      console.log(document.getElementById("submit_button"))
-      setBookVisibility(false);
-    } else {
-      setBookVisibility(true);
-      
-    }
+    setBookVisibility(!bookVisibility)
   }
   // pass down handleClick function
   
   const handleClickSearch = () => {
-    if(searchVisibility) {
-      console.log(document.getElementById("submit_button"))
-      setSearchVisibility(false);
-    } else {
-      setSearchVisibility(true);
-      
-    }
-    
-
+    setSearchVisibility(!searchVisibility)
   }
 
   return (
     <div>
-      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={!searchVisibility}postData={postData} data = {props.data}/>
+      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={!searchVisibility} postData={postData} data = {props.data}/>
       {/* <SearchForm handleClick={handleClickSearch} visibility={!bookVisibility} postData={postData}/> */}
       <Books  visibility={bookVisibility && searchVisibility}/>
     </div>
@@ -101,8 +87,6 @@ function App() {
     <div className="App">
        
      <Title/>
-        <Books/>
-
         <Body data ={data}/>
     </div>
   );
