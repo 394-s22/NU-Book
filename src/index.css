@@ -43,6 +43,12 @@ h1 {
   color: #611BBD;
 }
 
+.listBook button {
+  margin-top: 100px;
+  margin-bottom: 25px;
+  color: white;
+  background-color: #611BBD;
+}
 
 navbar {
 	overflow: hidden;
