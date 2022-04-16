@@ -18,7 +18,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import {signInWithGoogle, useUserState, signOut} from './utilities/firebase.js';
+import {signInWithGoogle, useUserState, signOut} from '../utilities/firebase.js';
 import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup } from 'firebase/auth';
 
 const LoginButton = () => (
