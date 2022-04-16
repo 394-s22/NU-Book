@@ -57,7 +57,7 @@ export const Form = (props) => {
               <br></br>
               <br></br>
               <Button variant='primary' id="submit_button" type="button" 
-              value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
+              value="Submit" onClick={props.handleClickSearch}>Submit</Button>
             </form> 
             {/* change the on-click function -- SHOULD NOT BE POST */}
           </div>

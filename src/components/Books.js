@@ -8,9 +8,7 @@ This component represents every book in the books database.
 
 const filterData =  (data) =>{
   const searchForm = document.getElementById("search-form");
-  console.log(searchForm)
   if(searchForm){ // they were actually filtering
-    console.log("filtering")
     const formResults = {
       "title": searchForm.elements["title"].value,
       "edition": searchForm.elements["edition"].value,
@@ -18,8 +16,6 @@ const filterData =  (data) =>{
       "class-number": searchForm.elements["class-number"].value,
       "price": searchForm.elements["price"].value,
       };
-      console.log("form results")
-      console.log(formResults);
       //adding logic for multiple categories, still just exact matches
       //per category, but the filtered books will be for any exact matches
       const allBooks = dictToList(data["book-sales"]);
