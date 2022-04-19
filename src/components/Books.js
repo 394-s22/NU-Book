@@ -23,7 +23,7 @@ const filterData =  (data) =>{
       let lst = [];
       exactFields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>
-          formResults[field] != "" && book[field] === formResults[field]);
+          formResults[field] != "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
 
