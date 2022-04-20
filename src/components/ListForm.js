@@ -26,10 +26,9 @@ export const dictToList = (dict) =>{
 
 export const Form = (props) => {
     const [user] = useUserState();
-    console.log(props.data); // remove?
   // add inputs to function for onSubmit
-    //const [visibility, setVisibility] = useState(false);
     if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
+<<<<<<< HEAD
       return(
         <div>
           <br></br>
@@ -160,18 +159,104 @@ export const Form = (props) => {
      </form>
      </div>
       )
+=======
+      if (props.searchVisibility) {
+        return(
+          <div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Button variant="primary" size="sm" onClick={props.handleClickSearch}>X</Button>
+            <form id="search-form">
+              <label>
+                <input class="form-control" type="text" name="title" placeholder="Title"></input>
+              </label>
+              <br></br>
+              <label>
+                <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
+              </label>
+              <br></br>
+              <label>
+                <input class="form-control" type="text" name="department" placeholder="Department"></input>
+              </label>
+              <br></br>
+              <label>
+                <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
+              </label>
+              <br></br>
+              <label>
+                <input class="form-control" type="number" name="price" placeholder="Price" />
+              </label>
+              <br></br>
+              <br></br>
+              <br></br>
+              <Button variant='primary' id="submit_button" type="button" 
+              value="Submit" onClick={props.handleClickSearch}>Submit</Button>
+            </form> 
+            {/* change the on-click function -- SHOULD NOT BE POST */}
+          </div>
+          );
+      }
+      else {
+        return(
+          <div>
+            <br></br>
+             <br></br>
+             <br></br>
+          <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
+          <form id="list-form">
+            <label>
+              <input class="form-control" type="text" name="title" placeholder="Title"></input>
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="text" name="department" placeholder="Department"></input>
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="text" name="seller-name" placeholder="Your name"></input>
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="number" name="seller-phone" placeholder="Phone number"></input>
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="number" name="price" placeholder="Price" />
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="text" name="email" placeholder="Email" />
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="url" name="url" placeholder="Image" />
+            </label>
+            <br></br>
+            <Button variant='primary' id="submit_button" type="button" 
+            value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
+          </form> 
+          </div>
+        );
+      }
+>>>>>>> 88a478384458f3424e58d02397f6b5d051b3e17f
     }
     else {
       return (
         <div className="listBook">
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           {/* !user ? ()=> alert("you must sign in first to list a book"): */}
+          {/* !user ? ()=> alert("you must sign in first to list a book"): */}
           <Button variant="primary" size="sm" onClick={props.handleClick}>List a Book</Button>
           {/* <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button> */}
-          <Button variant="secondary" size="sm" onClick={props.handleClick}>Search for a Book</Button>
+          <Button variant="secondary" size="sm" onClick={props.handleClickSearch}>Search Books</Button>
+          {/* handleClick instead of handleClickSearch */}
           {/* <button type = "button" className = "btn-secondary" onClick={ props.handleClickSearch}>Search for a Book</button>       */}
         </div>
       )
