@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import{useState, useEffect} from "react";
 import{ref, onValue, getDatabase,set, push} from "firebase/database";
-import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -82,3 +82,45 @@ export const useUserState = () => {
 
   return [user];
 };
+
+export const test_user = () => {
+  console.log(getAuth(firebase))
+}
+
+const auth = getAuth();
+const user = auth.currentUser;
+
+export const get_user = () => {
+
+  if (user !== null) {
+    // The user object has basic properties such as display name, email, etc.
+    const displayName = user.displayName;
+    const email = user.email;
+    const photoURL = user.photoURL;
+    const emailVerified = user.emailVerified;
+
+    // The user's ID, unique to the Firebase project. Do NOT use
+    // this value to authenticate with your backend server, if
+    // you have one. Use User.getToken() instead.
+    const uid = user.uid;
+    return [displayName,email]
+  }
+  else{
+    console.log('user == NULL')
+  }
+}
+
+export const remove_book_by_key = (key) => {
+  ref(database, `/book-sales/${key}`).remove()
+  console.log('removed?')
+}
+
+
+export const delete_book = (title, email) => {
+  let data = ref(database, `/book-sales`)
+  console.log(data)
+
+  let filtered = data.filter(book => 
+    book['title'] === title && book['email'] === email)
+  remove_book_by_key(filtered[0].Key)
+}

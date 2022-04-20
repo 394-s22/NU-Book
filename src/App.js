@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import { useData, setData, addData, useUserState } from './utilities/firebase.js';
+import { useData, setData, addData, useUserState, test_user, delete_book } from './utilities/firebase.js';
 import Title from './components/Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from './components/ListForm.js';
@@ -83,7 +83,8 @@ function App() {
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
-
+  
+  delete_book('Introducing Islam','dlsotir@gmail.com')
   return (
     <div className="App">
        
