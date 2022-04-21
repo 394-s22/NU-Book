@@ -109,7 +109,7 @@ export const get_user = () => {
     console.log('user == NULL')
   }
 }
-
+/*
 export const remove_book_by_key = (key) => {
   ref(database, `/book-sales/${key}`).remove()
   console.log('removed?')
@@ -124,3 +124,4 @@ export const delete_book = (title, email) => {
     book['title'] === title && book['email'] === email)
   remove_book_by_key(filtered[0].Key)
 }
+*/
