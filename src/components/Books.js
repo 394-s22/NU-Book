@@ -26,11 +26,6 @@ const filterData =  (data) =>{
           formResults[field] != "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
-
-      if(lst.length==0){ // they exit the form without typing anything, or without filling out all the fields
-        // show every original book
-        return [dictToList(data["book-sales"]), allBooks.length];
-      }
       // if they actually are filtering
       return [lst, allBooks.length];
   }
