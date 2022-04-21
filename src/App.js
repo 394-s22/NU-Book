@@ -83,8 +83,6 @@ function App() {
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
-  
-  delete_book('Introducing Islam','dlsotir@gmail.com')
   return (
     <div className="App">
        
