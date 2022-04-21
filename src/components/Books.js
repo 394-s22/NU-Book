@@ -23,8 +23,8 @@ const filterData =  (data) =>{
       let lst = [];
       exactFields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>
-          formResults[field] != "" && book[field] === formResults[field]);
-        lst = Array.from(new Set(lst.concat(formResults)));
+          formResults[field] != "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
+        lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
 
       if(lst.length==0){ // they exit the form without typing anything, or without filling out all the fields
