@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import { useData, setData, addData, useUserState } from './utilities/firebase.js';
+import { useData, setData, addData, useUserState, test_user, delete_book } from './utilities/firebase.js';
 import Title from './components/Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from './components/ListForm.js';
@@ -17,10 +17,11 @@ const postData = (handleClick) => {
     "seller-name": bookForm.elements["seller-name"].value,
     "seller-phone": bookForm.elements["seller-phone"].value,
     "price": bookForm.elements["price"].value,
+    "quality": bookForm.elements["quality"].value,
     "email": bookForm.elements["email"].value
     };
-  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"]) {
-    alert("Title, Department, Class number, and Price are required inputs.");
+  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"] || !formResults["quality"]) {
+    alert("Title, Department, Class number, Price, and Quality are required inputs.");
   }
   else {
     addBook(formResults);
@@ -83,7 +84,8 @@ function App() {
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
-
+  
+  //delete_book('Introducing Islam','dlsotir@gmail.com')
   return (
     <div className="App">
        
