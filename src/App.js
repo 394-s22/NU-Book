@@ -17,10 +17,11 @@ const postData = (handleClick) => {
     "seller-name": bookForm.elements["seller-name"].value,
     "seller-phone": bookForm.elements["seller-phone"].value,
     "price": bookForm.elements["price"].value,
+    "quality": bookForm.elements["quality"].value,
     "email": bookForm.elements["email"].value
     };
-  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"]) {
-    alert("Title, Department, Class number, and Price are required inputs.");
+  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"] || !formResults["quality"]) {
+    alert("Title, Department, Class number, Price, and Quality are required inputs.");
   }
   else {
     addBook(formResults);
