@@ -8,7 +8,20 @@ This component represents every book in the books database.
 
 const filterData =  (data) =>{
   const searchForm = document.getElementById("search-form");
-  if(searchForm){ // they were actually filtering
+  let res = document.getElementById("search-result").value;
+  console.log(res);
+  if(res){
+    const allBooks = dictToList(data["book-sales"]);
+    let lst = [];
+    let fieldSpecificBooks = allBooks.filter(book => book["title"] === res);
+    lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
+    if(lst.length===0){ // they exit the form without typing anything, or without filling out all the fields
+      // show every original book
+      return dictToList(data["book-sales"]);
+    }
+    // if they actually are filtering
+    return lst;
+  }else if(searchForm){ // they were actually filtering
     const formResults = {
       "title": searchForm.elements["title"].value,
       "edition": searchForm.elements["edition"].value,
@@ -23,11 +36,11 @@ const filterData =  (data) =>{
       let lst = [];
       exactFields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>
-          formResults[field] != "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
+          formResults[field] !== "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
 
-      if(lst.length==0){ // they exit the form without typing anything, or without filling out all the fields
+      if(lst.length===0){ // they exit the form without typing anything, or without filling out all the fields
         // show every original book
         return dictToList(data["book-sales"]);
       }

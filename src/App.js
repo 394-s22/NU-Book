@@ -87,9 +87,8 @@ function App() {
   //delete_book('Introducing Islam','dlsotir@gmail.com')
   return (
     <div className="App">
-       
-     <Title/>
-        <Body data ={data}/>
+    <Title/>
+    <Body data ={data}/>
     </div>
   );
 }
