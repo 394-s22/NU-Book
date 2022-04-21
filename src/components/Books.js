@@ -27,6 +27,9 @@ const filterData =  (data) =>{
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
       // if they actually are filtering
+      if(!formResults["title"] && !formResults["edition"]&& !formResults["department"]&& !formResults["price"]){
+        return [allBooks, allBooks.length]
+      }
       return [lst, allBooks.length];
   }
   else { // they were listing a book
