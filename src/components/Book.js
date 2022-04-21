@@ -16,6 +16,7 @@ const Book = (props) => {
               <li class="list-group-item">{props.book["department"]} {props.book["class-number"]}</li>
               <li class="list-group-item">{props.book["seller-name"]}</li>
               <li class="list-group-item">${props.book["price"]}</li>
+              <li class="list-group-item">{props.book["quality"]}</li>
             </ul>
 
             {/* <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a> */}

@@ -19,7 +19,7 @@ const filterData =  (data) =>{
       //adding logic for multiple categories, still just exact matches
       //per category, but the filtered books will be for any exact matches
       const allBooks = dictToList(data["book-sales"]);
-      const exactFields = ["title", "department", "class-number"];
+      const exactFields = ["title", "edition", "department", "class-number"];
       let lst = [];
       exactFields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>

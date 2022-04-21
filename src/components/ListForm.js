@@ -51,7 +51,7 @@ export const Form = (props) => {
               </label>
               <br></br>
               <label>
-                <input class="form-control" type="number" name="price" placeholder="Price" />
+                <input class="form-control" type="number" name="price" placeholder="Price: less than" />
               </label>
               <br></br>
               <br></br>
@@ -97,6 +97,10 @@ export const Form = (props) => {
             <br></br>
             <label>
               <input class="form-control" type="number" name="price" placeholder="Price" />
+            </label>
+            <br></br>
+            <label>
+              <input class="form-control" type="text" name="quality" placeholder="Quality" />
             </label>
             <br></br>
             <label>
