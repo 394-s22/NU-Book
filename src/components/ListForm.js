@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { useUserState } from '../utilities/firebase.js';
-import Book from './Book';
+import { Departments, fetchDepartments } from './Departments.js'
 
 /* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
@@ -21,32 +21,15 @@ export const dictToList = (dict) =>{
     return arr;
 }
 
-const fetchDepartments = async () => {
-  fetch("../departments.json")
-  .then(response => {
-    return response.json();
-  })
-}
-
-const Departments = (props) => {
-  const departments = props.departments["departments"]
-  return(
-    departments.map(department => {
-      return(
-        <option value={department["abbrev"]}>{department["abbrev"]}</option>
-      )
-    })
-  );
-}
-
 
 export const Form = (props) => {
     const [user] = useUserState();
   // add inputs to function for onSubmit
     if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       if (props.searchVisibility) {
-        const department_list = fetchDepartments()
+        fetchDepartments()
           .then(departments => {
+            console.log(departments)
             return(
               <div>
                 <br></br>

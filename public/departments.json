@@ -1,0 +1,988 @@
+{
+"departments": [
+        {
+        "abbrev" : "ACCOUNT",
+        "full_name" : "Accounting"
+        },
+        {
+        "abbrev" : "ACCT",
+        "full_name" : "Accounting and Info Systems"
+        },
+        {
+        "abbrev" : "ACCTX",
+        "full_name" : "Accounting and Info Systems"
+        },
+        {
+        "abbrev" : "ADVT",
+        "full_name" : "Advertising"
+        },
+        {
+        "abbrev" : "AFST",
+        "full_name" : "African Studies"
+        },
+        {
+        "abbrev" : "AF_AM_ST",
+        "full_name" : "African American Studies"
+        },
+        {
+        "abbrev" : "AMER_ST",
+        "full_name" : "American Studies"
+        },
+        {
+        "abbrev" : "ANTHRO",
+        "full_name" : "Anthropology"
+        },
+        {
+        "abbrev" : "APP_PHYS",
+        "full_name" : "Applied Physics"
+        },
+        {
+        "abbrev" : "ARABIC",
+        "full_name" : "Arabic"
+        },
+        {
+        "abbrev" : "ART",
+        "full_name" : "Art Theory and Practice"
+        },
+        {
+        "abbrev" : "ART_HIST",
+        "full_name" : "Art History"
+        },
+        {
+        "abbrev" : "ASIAN_AM",
+        "full_name" : "Asian American Studies"
+        },
+        {
+        "abbrev" : "ASIAN_LC",
+        "full_name" : "Asian Languages and Cultures"
+        },
+        {
+        "abbrev" : "ASTRON",
+        "full_name" : "Astronomy"
+        },
+        {
+        "abbrev" : "ATHL_PRA",
+        "full_name" : "Athletic Practicum"
+        },
+        {
+        "abbrev" : "BIOL_SCI",
+        "full_name" : "Biological Sciences"
+        },
+        {
+        "abbrev" : "BIOSTAT",
+        "full_name" : "Biostatistics"
+        },
+        {
+        "abbrev" : "BLAW",
+        "full_name" : "Business Law"
+        },
+        {
+        "abbrev" : "BMD_ENG",
+        "full_name" : "Biomedical Engineering"
+        },
+        {
+        "abbrev" : "BUSCOM",
+        "full_name" : "Business and Commercial Law"
+        },
+        {
+        "abbrev" : "BUS_ANLY",
+        "full_name" : "Business Analytics"
+        },
+        {
+        "abbrev" : "BUS_INST",
+        "full_name" : "Business Institutions"
+        },
+        {
+        "abbrev" : "CFS",
+        "full_name" : "Chicago Field Studies"
+        },
+        {
+        "abbrev" : "CHEM",
+        "full_name" : "Chemistry"
+        },
+        {
+        "abbrev" : "CHEM_ENG",
+        "full_name" : "Chemical Engineering"
+        },
+        {
+        "abbrev" : "CHINESE",
+        "full_name" : "Chinese"
+        },
+        {
+        "abbrev" : "CHSS",
+        "full_name" : "Comp and Hist Social Science"
+        },
+        {
+        "abbrev" : "CIC",
+        "full_name" : "CIC Traveling Scholar"
+        },
+        {
+        "abbrev" : "CIS",
+        "full_name" : "Computer Information Systems"
+        },
+        {
+        "abbrev" : "CIV_ENV",
+        "full_name" : "Civil and Envrnmtl Engineering"
+        },
+        {
+        "abbrev" : "CLASSICS",
+        "full_name" : "Classics"
+        },
+        {
+        "abbrev" : "CLIN_PSY",
+        "full_name" : "Clinical Psychology"
+        },
+        {
+        "abbrev" : "CLIN_RES",
+        "full_name" : "Clinical Research and Reg Admin"
+        },
+        {
+        "abbrev" : "CME",
+        "full_name" : "Chicago Metropolitan Exchange"
+        },
+        {
+        "abbrev" : "CMN",
+        "full_name" : "Communication Related Courses"
+        },
+        {
+        "abbrev" : "CODING",
+        "full_name" : "Coding Boot Camp"
+        },
+        {
+        "abbrev" : "COG_SCI",
+        "full_name" : "Cognitive Science"
+        },
+        {
+        "abbrev" : "COMM_ST",
+        "full_name" : "Communication Studies"
+        },
+        {
+        "abbrev" : "COMP_ENG",
+        "full_name" : "Computer Engineering"
+        },
+        {
+        "abbrev" : "COMP_LIT",
+        "full_name" : "Comparative Literary Studies"
+        },
+        {
+        "abbrev" : "COMP_SCI",
+        "full_name" : "Computer Science"
+        },
+        {
+        "abbrev" : "CONDUCT",
+        "full_name" : "Conducting"
+        },
+        {
+        "abbrev" : "CONPUB",
+        "full_name" : "Constitutional and Public Law"
+        },
+        {
+        "abbrev" : "COUN",
+        "full_name" : "Counseling"
+        },
+        {
+        "abbrev" : "CRDV",
+        "full_name" : "Career Development"
+        },
+        {
+        "abbrev" : "CRIM",
+        "full_name" : "Criminal Law"
+        },
+        {
+        "abbrev" : "CRT_TRES",
+        "full_name" : "Certified Treasury Profess"
+        },
+        {
+        "abbrev" : "CSD",
+        "full_name" : "Comm Sci and Disorders"
+        },
+        {
+        "abbrev" : "CYBER_BC",
+        "full_name" : "Cybersecurity Boot Camp"
+        },
+        {
+        "abbrev" : "DANCE",
+        "full_name" : "Dance"
+        },
+{
+        "abbrev" : "DATA_BC",
+        "full_name" : "Data Science Boot Camp"
+        },
+        {
+        "abbrev" : "DATA_SCI",
+        "full_name" : "Data Science"
+        },
+        {
+        "abbrev" : "DECS",
+        "full_name" : "Managerial Econ and Decision Sci"
+        },
+        {
+        "abbrev" : "DGP",
+        "full_name" : "Driskill Life Sciences"
+        },
+        {
+        "abbrev" : "DIV_MED",
+        "full_name" : "Divorce Mediation Training"
+        },
+        {
+        "abbrev" : "DSGN",
+        "full_name" : "Segal Design Institute"
+        },
+        {
+        "abbrev" : "EARTH",
+        "full_name" : "Earth and Planetary Sciences"
+        },
+        {
+        "abbrev" : "ECON",
+        "full_name" : "Economics"
+        },
+        {
+        "abbrev" : "ELEC_ENG",
+        "full_name" : "Electrical Engineering"
+        },
+        {
+        "abbrev" : "ENGLISH",
+        "full_name" : "English"
+        },
+        {
+        "abbrev" : "ENTR",
+        "full_name" : "Entrepreneurship"
+        },
+        {
+        "abbrev" : "ENTREP",
+        "full_name" : "Entrepreneurship and Innovation"
+        },
+        {
+        "abbrev" : "ENVR_POL",
+        "full_name" : "Environmental Policy and Culture"
+        },
+        {
+        "abbrev" : "ENVR_SCI",
+        "full_name" : "Environmental Science"
+        },
+        {
+        "abbrev" : "ES_APPM",
+        "full_name" : "Engineering Sci and Applied Mat"
+        },
+        {
+        "abbrev" : "EXMMX",
+        "full_name" : "Executive Master in Management"
+        },
+        {
+        "abbrev" : "FINANCE",
+        "full_name" : "Finance"
+        },
+        {
+        "abbrev" : "FINC",
+        "full_name" : "Finance"
+        },
+        {
+        "abbrev" : "FINCX",
+        "full_name" : "Finance"
+        },
+        {
+        "abbrev" : "FN_EXTND",
+        "full_name" : "CFP Extended"
+        },
+        {
+        "abbrev" : "FRENCH",
+        "full_name" : "French"
+        },
+        {
+        "abbrev" : "GAMS",
+        "full_name" : "Global Avant-garde and Mod St"
+        },
+        {
+        "abbrev" : "GBL_HLTH",
+        "full_name" : "Global Health"
+        },
+        {
+        "abbrev" : "GENET_CN",
+        "full_name" : "Genetic Counseling"
+        },
+        {
+        "abbrev" : "GEN_CMN",
+        "full_name" : "General Comm and Intro Courses"
+        },
+        {
+        "abbrev" : "GEN_ENG",
+        "full_name" : "General Engineering"
+        },
+        {
+        "abbrev" : "GEN_LA",
+        "full_name" : "General Liberal Arts"
+        },
+        {
+        "abbrev" : "GEN_MUS",
+        "full_name" : "General Music"
+        },
+        {
+        "abbrev" : "GEOG",
+        "full_name" : "Geography"
+        },
+        {
+        "abbrev" : "GERMAN",
+        "full_name" : "German"
+        },
+        {
+        "abbrev" : "GNDR_ST",
+        "full_name" : "Gender Studies"
+        },
+        {
+        "abbrev" : "GREEK",
+        "full_name" : "Greek"
+        },
+        {
+        "abbrev" : "HBMI",
+        "full_name" : "Health and Biomed Informatics"
+        },
+        {
+        "abbrev" : "HCAK",
+        "full_name" : "Health Care at Kellogg"
+        },
+        {
+        "abbrev" : "HC_COM",
+        "full_name" : "Healthcare Compliance"
+        },
+        {
+        "abbrev" : "HDC",
+        "full_name" : "Human Development in Context"
+        },
+        {
+        "abbrev" : "HDSP",
+        "full_name" : "Human Development and Social Pol"
+        },
+        {
+        "abbrev" : "HEBREW",
+        "full_name" : "Hebrew"
+        },
+        {
+        "abbrev" : "HIND_URD",
+        "full_name" : "Hindi and Urdu"
+        },
+        {
+        "abbrev" : "HISTORY",
+        "full_name" : "History"
+        },
+        {
+        "abbrev" : "HLTH_COM",
+        "full_name" : "Health Communication"
+        },
+        {
+        "abbrev" : "HQS",
+        "full_name" : "Hlthcare Quality and Pat Safety"
+        },
+        {
+        "abbrev" : "HSIP",
+        "full_name" : "Health Sciences Integrated Prg"
+        },
+        {
+        "abbrev" : "HSR",
+        "full_name" : "Health Services Research"
+        },
+        {
+        "abbrev" : "HUM",
+        "full_name" : "Humanities"
+        },
+        {
+        "abbrev" : "IBIS",
+        "full_name" : "Interdisciplinary Bio Sciences"
+        },
+        {
+        "abbrev" : "IEMS",
+        "full_name" : "Indust Eng and Mgmt Sciences"
+        },
+        {
+        "abbrev" : "IMC",
+        "full_name" : "Integ Marketing Communication"
+        },
+        {
+        "abbrev" : "INF_TECH",
+        "full_name" : "Information Technology"
+        },
+        {
+        "abbrev" : "INTERDIS",
+        "full_name" : "Interdisciplinary Studies"
+        },
+        {
+        "abbrev" : "INTG_SCI",
+        "full_name" : "Integrated Science"
+},
+        {
+        "abbrev" : "INTL",
+        "full_name" : "International Business"
+        },
+        {
+        "abbrev" : "INTLM",
+        "full_name" : "International Business"
+        },
+        {
+        "abbrev" : "INTLX",
+        "full_name" : "International Business"
+        },
+        {
+        "abbrev" : "INTL_ST",
+        "full_name" : "International Studies"
+        },
+        {
+        "abbrev" : "INTPROP",
+        "full_name" : "Intellectual Property"
+        },
+        {
+        "abbrev" : "IPLS",
+        "full_name" : "Liberal Studies"
+        },
+        {
+        "abbrev" : "ISEN",
+        "full_name" : "Institute for Sustain and Energy"
+        },
+        {
+        "abbrev" : "ITALIAN",
+        "full_name" : "Italian"
+        },
+        {
+        "abbrev" : "JAPANESE",
+        "full_name" : "Japanese"
+        },
+        {
+        "abbrev" : "JAZZ_ST",
+        "full_name" : "Jazz Studies"
+        },
+        {
+        "abbrev" : "JOUR",
+        "full_name" : "Journalism"
+        },
+        {
+        "abbrev" : "JRN_WRIT",
+        "full_name" : "Journalistic Writing"
+        },
+        {
+        "abbrev" : "JWSH_ST",
+        "full_name" : "Jewish Studies"
+        },
+        {
+        "abbrev" : "KACIM",
+        "full_name" : "Architectures of Collaboration"
+        },
+        {
+        "abbrev" : "KACIX",
+        "full_name" : "Architectures of Collaboration"
+        },
+        {
+        "abbrev" : "KELLG_FE",
+        "full_name" : "Financial Economics"
+        },
+        {
+        "abbrev" : "KELLG_MA",
+        "full_name" : "Managerial Analytics"
+        },
+        {
+        "abbrev" : "KIEIX",
+        "full_name" : "Kellogg Inn and Entrep Initiativ"
+        },
+        {
+        "abbrev" : "KOREAN",
+        "full_name" : "Korean"
+        },
+        {
+        "abbrev" : "KPPIX",
+        "full_name" : "Kellogg Public-Private Init"
+        },
+        {
+        "abbrev" : "LATIN",
+        "full_name" : "Latin"
+        },
+        {
+        "abbrev" : "LATINO",
+        "full_name" : "Latina and Latino Studies"
+        },
+        {
+        "abbrev" : "LATIN_AM",
+        "full_name" : "Latin Amer and Carib Studies"
+        },
+        {
+        "abbrev" : "LAWSTUDY",
+        "full_name" : "Law Studies"
+        },
+        {
+        "abbrev" : "LDEV",
+        "full_name" : "Leadership Development"
+        },
+        {
+        "abbrev" : "LDRSHP",
+        "full_name" : "Center for Leadership"
+        },
+        {
+        "abbrev" : "LEAD_ART",
+        "full_name" : "Art of Leadership"
+        },
+        {
+        "abbrev" : "LEGAL_ST",
+        "full_name" : "Legal Studies"
+        },
+        {
+        "abbrev" : "LING",
+        "full_name" : "Linguistics"
+        },
+        {
+        "abbrev" : "LIT",
+        "full_name" : "Literature"
+        },
+        {
+        "abbrev" : "LITARB",
+        "full_name" : "Litigation and Arbitration"
+        },
+        {
+        "abbrev" : "LOC",
+        "full_name" : "Learning and Org Change"
+        },
+        {
+        "abbrev" : "LRN_SCI",
+        "full_name" : "Learning Sciences"
+        },
+        {
+        "abbrev" : "MATH",
+        "full_name" : "Mathematics"
+        },
+        {
+        "abbrev" : "MAT_SCI",
+        "full_name" : "Materials Science and Eng"
+        },
+        {
+        "abbrev" : "MBAI",
+        "full_name" : "Bus/Artificial Intelligence"
+        },
+        {
+        "abbrev" : "MBIOTECH",
+        "full_name" : "Masters in Biotechnology"
+        },
+        {
+        "abbrev" : "MCW",
+        "full_name" : "Master of Creative Writing"
+        },
+        {
+        "abbrev" : "MECH_ENG",
+        "full_name" : "Mechanical Engineering"
+        },
+        {
+        "abbrev" : "MECN",
+        "full_name" : "Managerial Economics"
+        },
+        {
+        "abbrev" : "MECNX",
+        "full_name" : "Decision Sciences"
+        },
+        {
+        "abbrev" : "MECS",
+        "full_name" : "Managerial Economic and Strategy"
+        },
+        {
+        "abbrev" : "MED_SKIL",
+        "full_name" : "Mediation Skills Training"
+        },
+        {
+        "abbrev" : "MEM",
+        "full_name" : "Master of Engg Management"
+        },
+        {
+        "abbrev" : "MENA",
+        "full_name" : "Middle East and North Africa St"
+        },
+        {
+        "abbrev" : "MHB",
+        "full_name" : "Medical Humanities and Bioethics"
+        },
+        {
+        "abbrev" : "MHI",
+        "full_name" : "MS in Health Informatics"
+        },
+        {
+        "abbrev" : "MIT",
+        "full_name" : "Media Industries and Tech"
+        },
+        {
+        "abbrev" : "MKTG",
+        "full_name" : "Marketing"
+        },
+        {
+        "abbrev" : "MKTGX",
+        "full_name" : "Marketing"
+        },
+        {
+        "abbrev" : "MMSS",
+        "full_name" : "Math Methods in the Social Sc"
+        },
+        {
+        "abbrev" : "MORS",
+        "full_name" : "Management and Organizations"
+        },
+        {
+        "abbrev" : "MORSX",
+        "full_name" : "Management and Organizations"
+        },
+        {
+        "abbrev" : "MPD",
+        "full_name" : "Master of Product Development"
+        },
+        {
+        "abbrev" : "MPPA",
+        "full_name" : "Master of Public Policy Admin"
+        },
+        {
+        "abbrev" : "MSA",
+        "full_name" : "Sports Administration"
+        },
+        {
+        "abbrev" : "MSAI",
+        "full_name" : "Artificial Intelligence"
+        },
+        {
+        "abbrev" : "MSC",
+        "full_name" : "MS in Communication"
+        },
+        {
+        "abbrev" : "MSCI",
+        "full_name" : "Master of Science in Clin Inv"
+        },
+        {
+        "abbrev" : "MSDS",
+        "full_name" : "Master of Data Science"
+        },
+        {
+        "abbrev" : "MSGH",
+        "full_name" : "Master of Global Health"
+        },
+        {
+        "abbrev" : "MSHA",
+        "full_name" : "MS in Health Analytics"
+        },
+        {
+        "abbrev" : "MSIA",
+        "full_name" : "Master of Science in Analytics"
+        },
+        {
+        "abbrev" : "MSLCE",
+        "full_name" : "MS Leadership Creative Ent"
+        },
+        {
+        "abbrev" : "MSRC",
+        "full_name" : "Master of Regulatory Complianc"
+        },
+        {
+        "abbrev" : "MSTP",
+        "full_name" : "Medical Scientist Training"
+        },
+        {
+        "abbrev" : "MS_DSP",
+        "full_name" : "Master of Data Science Program"
+        },
+        {
+        "abbrev" : "MS_ED",
+        "full_name" : "MS in Educ and Social Policy"
+        },
+        {
+        "abbrev" : "MS_FT",
+        "full_name" : "MS in Marital and Family Therapy"
+        },
+        {
+        "abbrev" : "MS_HE",
+        "full_name" : "MS in Higher Ed Admin and Policy"
+        },
+        {
+        "abbrev" : "MS_IDS",
+        "full_name" : "Master of Infor Desi and Strateg"
+        },
+        {
+        "abbrev" : "MS_LOC",
+        "full_name" : "Learning and Org Change"
+        },
+        {
+        "abbrev" : "MTS",
+        "full_name" : "Media, Technology and Society"
+        },
+        {
+        "abbrev" : "MUSEUM",
+        "full_name" : "Museum Studies"
+        },
+        {
+        "abbrev" : "MUSIC",
+        "full_name" : "Music"
+        },
+        {
+        "abbrev" : "MUSICOL",
+        "full_name" : "Musicology"
+        },
+        {
+        "abbrev" : "MUSIC_ED",
+        "full_name" : "Music Education"
+        },
+        {
+        "abbrev" : "MUS_COMP",
+        "full_name" : "Music Composition"
+        },
+        {
+        "abbrev" : "MUS_TECH",
+        "full_name" : "Music Technology"
+        },
+        {
+        "abbrev" : "MUS_THRY",
+        "full_name" : "Music Theory"
+        },
+        {
+        "abbrev" : "NAV_SCI",
+        "full_name" : "Naval Science"
+        },
+        {
+        "abbrev" : "NEUROBIO",
+        "full_name" : "Neurobiology and Physiology"
+        },
+        {
+        "abbrev" : "NEUROSCI",
+        "full_name" : "Neuroscience"
+        },
+        {
+        "abbrev" : "NHSI",
+        "full_name" : "National High School Institute"
+        },
+        {
+        "abbrev" : "NUIN",
+        "full_name" : "Neuroscience"
+        },
+        {
+        "abbrev" : "OPNS",
+        "full_name" : "Operations Management"
+        },
+        {
+        "abbrev" : "OPNSX",
+        "full_name" : "Operations Management"
+        },
+        {
+        "abbrev" : "ORG_BEH",
+        "full_name" : "Organizational Behavior"
+        },
+        {
+        "abbrev" : "PA",
+        "full_name" : "Physician Assistant"
+        },
+        {
+        "abbrev" : "PACT",
+        "full_name" : "Public Action and Social Compact"
+        },
+        {
+        "abbrev" : "PBC",
+        "full_name" : "Plant Biology and Conservation"
+        },
+        {
+        "abbrev" : "PERF_ST",
+        "full_name" : "Performance Studies"
+        },
+        {
+        "abbrev" : "PERSIAN",
+        "full_name" : "Persian"
+        },
+        {
+        "abbrev" : "PHIL",
+        "full_name" : "Philosophy"
+        },
+        {
+        "abbrev" : "PHIL_NP",
+        "full_name" : "Philanthropy and Nonprofit Fund"
+        },
+        {
+        "abbrev" : "PHYSICS",
+        "full_name" : "Physics"
+        },
+        {
+        "abbrev" : "PHYS_TH",
+        "full_name" : "Physical Therapy"
+        },
+        {
+        "abbrev" : "PIANO",
+        "full_name" : "Piano"
+        },
+        {
+        "abbrev" : "POLISH",
+        "full_name" : "Polish"
+        },
+        {
+        "abbrev" : "POLI_SCI",
+        "full_name" : "Political Science"
+        },
+        {
+        "abbrev" : "PORT",
+        "full_name" : "Portuguese"
+        },
+        {
+        "abbrev" : "PPTYTORT",
+        "full_name" : "Property and Tort Law"
+        },
+        {
+        "abbrev" : "PRDV",
+        "full_name" : "Personal Development"
+        },
+        {
+        "abbrev" : "PROJ_MGT",
+        "full_name" : "Project Management"
+        },
+        {
+        "abbrev" : "PROJ_PMI",
+        "full_name" : "Project Management"
+        },
+        {
+        "abbrev" : "PRO_HLTH",
+        "full_name" : "Pro Health"
+        },
+        {
+        "abbrev" : "PSED",
+        "full_name" : "Predictive Science and Engineer"
+        },
+        {
+        "abbrev" : "PSYCH",
+        "full_name" : "Psychology"
+        },
+        {
+        "abbrev" : "PUB_HLTH",
+        "full_name" : "Public Health"
+        },
+        {
+        "abbrev" : "QARS",
+        "full_name" : "Qual Assur and Reg Science"
+        },
+        {
+        "abbrev" : "QSB",
+        "full_name" : "Quantitative and Systems Biology"
+        },
+        {
+        "abbrev" : "REAL",
+        "full_name" : "Real Estate"
+        },
+        {
+        "abbrev" : "REGLAW",
+        "full_name" : "Regulatory Law"
+        },
+        {
+        "abbrev" : "RELIGION",
+        "full_name" : "Religious Studies"
+        },
+        {
+        "abbrev" : "REPR_SCI",
+        "full_name" : "Reproductive Science and Med"
+        },
+        {
+        "abbrev" : "RTVF",
+        "full_name" : "Radio/Television/Film"
+        },
+        {
+        "abbrev" : "RUSSIAN",
+        "full_name" : "Russian"
+        },
+        {
+        "abbrev" : "SAI",
+        "full_name" : "Sound Arts and Industries"
+        },
+        {
+        "abbrev" : "SESP",
+        "full_name" : "SESP Core"
+        },
+        {
+        "abbrev" : "SE_POL",
+        "full_name" : "Social and Economic Policy"
+        },
+        {
+        "abbrev" : "SHRM",
+        "full_name" : "Society of HR Management"
+        },
+        {
+        "abbrev" : "SLAVIC",
+        "full_name" : "Slavic Languages and Literature"
+        },
+        {
+        "abbrev" : "SOCIOL",
+        "full_name" : "Sociology"
+        },
+        {
+        "abbrev" : "SOC_POL",
+        "full_name" : "Social Policy"
+        },
+        {
+        "abbrev" : "SPANISH",
+        "full_name" : "Spanish"
+        },
+        {
+        "abbrev" : "SPANPORT",
+        "full_name" : "Spanish and Portuguese"
+        },
+        {
+        "abbrev" : "SPS",
+        "full_name" : "School of Professional Studies"
+        },
+        {
+        "abbrev" : "SSIM",
+        "full_name" : "Sustainability and Social Impact"
+        },
+        {
+        "abbrev" : "STAT",
+        "full_name" : "Statistics"
+        },
+        {
+        "abbrev" : "STRATCOM",
+        "full_name" : "Strategic Communication"
+        },
+        {
+        "abbrev" : "STRINGS",
+        "full_name" : "String Instruments"
+        },
+        {
+        "abbrev" : "STRT",
+        "full_name" : "Strategy"
+        },
+        {
+        "abbrev" : "STRTM",
+        "full_name" : "Strategy"
+        },
+        {
+        "abbrev" : "STRTX",
+        "full_name" : "Strategy"
+        },
+        {
+        "abbrev" : "SWAHILI",
+        "full_name" : "Swahili"
+        },
+        {
+        "abbrev" : "TAXLAW",
+        "full_name" : "Taxation Law"
+        },
+        {
+        "abbrev" : "TEACH_ED",
+        "full_name" : "Teacher Education"
+        },
+        {
+        "abbrev" : "TGS",
+        "full_name" : "TGS General Registrations"
+        },
+        {
+        "abbrev" : "THEATRE",
+        "full_name" : "Theatre"
+        },
+        {
+        "abbrev" : "TRANS",
+        "full_name" : "Transportation"
+        },
+        {
+        "abbrev" : "TURKISH",
+        "full_name" : "Turkish"
+        },
+        {
+        "abbrev" : "UXUI_BC",
+        "full_name" : "User Exp. Inte. Des. Boot Camp"
+        },
+        {
+        "abbrev" : "VOICE",
+        "full_name" : "Voice and Opera"
+        },
+        {
+        "abbrev" : "WIND_PER",
+        "full_name" : "Wind and Percussion"
+        }]
+}
+
