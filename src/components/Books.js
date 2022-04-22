@@ -21,6 +21,8 @@ const filterData =  (data) =>{
       //per category, but the filtered books will be for any exact matches
 
       const exactFields = ["title", "edition", "department", "class-number"];
+      const num_exactFields = ["edition", "class-number"];
+      const num_Fields=["price"];
     
       let lst = [];
       exactFields.forEach((field) => {
@@ -28,7 +30,21 @@ const filterData =  (data) =>{
           formResults[field] != "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
-      // if they actually are filtering
+
+      num_exactFields.forEach((field) => {
+        let fieldSpecificBooks = allBooks.filter(book =>
+          formResults[field] != "" && book[field].includes(formResults[field]));
+        lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
+      });
+
+      num_Fields.forEach((field) => {
+        let fieldSpecificBooks = allBooks.filter(book =>
+          formResults[field] != "" && parseFloat(book[field])<=parseFloat(formResults[field]) );
+      
+        lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
+      });
+
+
       if(!formResults["title"] && !formResults["edition"]&& !formResults["department"]&& !formResults["price"]){
         return [allBooks, allBooks.length]
       }
