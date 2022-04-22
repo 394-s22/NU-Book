@@ -1,12 +1,18 @@
-export const fetchDepartments = async () => {
-    fetch('./departments.json')
-    .then(response => {
-      return response.json();
-    })
-  }
+import { useState, useEffect } from 'react';
   
-export const Departments = (props) => {
-    const departments = props.departments["departments"]
+export const Departments = () => {
+    const [depts, setDepts] = useState([]);
+    useEffect(() => {
+        const fetchDepartments = async () => {
+            const data = await fetch('./departments.json')
+            const json = await data.json();
+            setDepts(json);
+        }
+        fetchDepartments()
+            .catch(console.error);
+    }, [])
+    console.log(depts)
+    const departments = depts["departments"]
     return(
       departments.map(department => {
         return(
