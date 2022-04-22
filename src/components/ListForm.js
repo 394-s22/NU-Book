@@ -42,7 +42,7 @@ export const Form = (props) => {
                 <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
               </label>
               <br></br>
-              <select>
+              <select name="department">
                 <option selected disabled>Department</option>
                 <Departments/>
               </select>
@@ -80,9 +80,10 @@ export const Form = (props) => {
               <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
             </label>
             <br></br>
-            <label>
-              <input class="form-control" type="text" name="department" placeholder="Department"></input>
-            </label>
+            <select name="department">
+              <option selected disabled>Department</option>
+              <Departments/>
+            </select>
             <br></br>
             <label>
               <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>

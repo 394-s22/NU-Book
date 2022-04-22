@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
   
 export const Departments = () => {
-    const [depts, setDepts] = useState([]);
+    const [depts, setDepts] = useState({"departments": []});
     useEffect(() => {
         const fetchDepartments = async () => {
             const data = await fetch('./departments.json')
@@ -11,7 +11,6 @@ export const Departments = () => {
         fetchDepartments()
             .catch(console.error);
     }, [])
-    console.log(depts)
     const departments = depts["departments"]
     return(
       departments.map(department => {
