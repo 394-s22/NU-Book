@@ -18,6 +18,7 @@ const postData = (handleClick) => {
     "seller-phone": bookForm.elements["seller-phone"].value,
     "price": bookForm.elements["price"].value,
     "quality": bookForm.elements["quality"].value,
+    "ISBN": bookForm.elements["ISBN"].value,
     "email": bookForm.elements["email"].value
     };
   if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"] || !formResults["quality"]) {

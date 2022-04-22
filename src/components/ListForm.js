@@ -104,6 +104,10 @@ export const Form = (props) => {
             </label>
             <br></br>
             <label>
+              <input class="form-control" type="text" name="ISBN" placeholder="ISBN" />
+            </label>
+            <br></br>
+            <label>
               <input class="form-control" type="text" name="email" placeholder="Email" />
             </label>
             <br></br>
