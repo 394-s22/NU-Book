@@ -21,47 +21,69 @@ export const dictToList = (dict) =>{
     return arr;
 }
 
+const fetchDepartments = async () => {
+  fetch("../departments.json")
+  .then(response => {
+    return response.json();
+  })
+}
+
+const Departments = (props) => {
+  const departments = props.departments["departments"]
+  return(
+    departments.map(department => {
+      return(
+        <option value={department["abbrev"]}>{department["abbrev"]}</option>
+      )
+    })
+  );
+}
+
 
 export const Form = (props) => {
     const [user] = useUserState();
   // add inputs to function for onSubmit
     if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       if (props.searchVisibility) {
-        return(
-          <div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <Button variant="primary" size="sm" onClick={props.handleClickSearch}>X</Button>
-            <form id="search-form">
-              <label>
-                <input class="form-control" type="text" name="title" placeholder="Title"></input>
-              </label>
-              <br></br>
-              <label>
-                <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
-              </label>
-              <br></br>
-              <label>
-                <input class="form-control" type="text" name="department" placeholder="Department"></input>
-              </label>
-              <br></br>
-              <label>
-                <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
-              </label>
-              <br></br>
-              <label>
-                <input class="form-control" type="number" name="price" placeholder="Price: less than" />
-              </label>
-              <br></br>
-              <br></br>
-              <br></br>
-              <Button variant='primary' id="submit_button" type="button" 
-              value="Submit" onClick={props.handleClickSearch}>Submit</Button>
-            </form> 
-            {/* change the on-click function -- SHOULD NOT BE POST */}
-          </div>
-          );
+        const department_list = fetchDepartments()
+          .then(departments => {
+            return(
+              <div>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Button variant="primary" size="sm" onClick={props.handleClickSearch}>X</Button>
+                <form id="search-form">
+                  <label>
+                    <input class="form-control" type="text" name="title" placeholder="Title"></input>
+                  </label>
+                  <br></br>
+                  <label>
+                    <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
+                  </label>
+                  <br></br>
+                  <select>
+                    <option selected disabled>Department</option>
+                    <Departments departments={departments} />
+                  </select>
+                  <br></br>
+                  <label>
+                    <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
+                  </label>
+                  <br></br>
+                  <label>
+                    <input class="form-control" type="number" name="price" placeholder="Price: less than" />
+                  </label>
+                  <br></br>
+                  <br></br>
+                  <br></br>
+                  <Button variant='primary' id="submit_button" type="button" 
+                  value="Submit" onClick={props.handleClickSearch}>Submit</Button>
+                </form> 
+                {/* change the on-click function -- SHOULD NOT BE POST */}
+              </div>
+              )
+          })  
       }
       else {
         return(
