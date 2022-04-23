@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from './components/ListForm.js';
 import Books from './components/Books';
 
-const postData = (handleClick) => {
+const postData = (handleClick, email , data) => {
   const bookForm = document.getElementById("list-form");
   const formResults = {
     "title": bookForm.elements["title"].value,
@@ -25,7 +25,7 @@ const postData = (handleClick) => {
     alert("Title, Department, Class number, Price, and Quality are required inputs.");
   }
   else {
-    addBook(formResults);
+    addBook(formResults, email, data );
     handleClick()
   }
 }
@@ -37,7 +37,7 @@ export const AddUser = async(user) => {
     const userObj = {
         userName: user.displayName,
         email : user.email,
-        books : []
+        books : {0 : 0}
     }
     console.log(user)
     try {
@@ -70,7 +70,7 @@ const Body = (props) => {
 
   return (
     <div>
-      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={searchVisibility} postData={postData} data = {props.data}/>
+      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={searchVisibility} postData={postData} data = {props.data} email = {user? user.email: null}/>
       {/* <SearchForm handleClick={handleClickSearch} visibility={!bookVisibility} postData={postData}/> */}
       <Books visibility={bookVisibility && !searchVisibility} searchVisibility={searchVisibility}/>
     </div>
@@ -90,10 +90,28 @@ const Body = (props) => {
 // };
 
 // Post a new Book
-const addBook = async(Book) =>{
+// find current user key in FireBase
+const Find_current_user = (email, data) =>{
+    let users;
+    users = data["users"];
+    
+    // let arr = [];
+    //   Object.keys(dict).forEach(key => 
+    //     arr.push(dict[key]))  
+    //   return arr;
+    let user_key = [];
+    Object.keys(users).forEach(key => {if(users[key].email === email) {user_key.push(key)}})
+    
+    return user_key;
+}
+
+const addBook = async(Book, email, data) =>{
   if (Book) {
     try {
       addData(`/book-sales`, Book);
+      let key = Find_current_user(email, data);
+      console.log(key[0]);
+      addData(`/users/${key[0]}/books`, Book)
     } catch (error) {
       alert(error);
     }

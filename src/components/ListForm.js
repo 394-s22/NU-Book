@@ -118,7 +118,7 @@ export const Form = (props) => {
             </label>
             <br></br>
             <Button variant='primary' id="submit_button" type="button" 
-            value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
+            value="Submit" onClick={() => {props.postData(props.handleClick, props.email, props.data)}}>Submit</Button>
           </form> 
           </div>
         );
