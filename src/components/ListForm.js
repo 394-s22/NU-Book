@@ -145,7 +145,7 @@ export const Form = (props) => {
             <br></br>
             
             <Button variant='primary' id="submit_button" type="button" 
-            value="Submit" onClick={() => {props.postData(props.handleClick); uploadImage();}}>Submit</Button>
+            value="Submit" onClick={() => {props.postData(props.handleClick, props.email, props.data); uploadImage();}}>Submit</Button>
           </form> 
           </div>
         );
@@ -155,7 +155,7 @@ export const Form = (props) => {
       return (
         <div className="listBook">
           {/* !user ? ()=> alert("you must sign in first to list a book"): */}
-          <Button variant="primary" size="sm" onClick={props.handleClick}>List a Book</Button>
+          <Button variant="primary" size="sm" onClick={() => !user ? alert("You must login to list a book"): props.handleClick()}>List a Book</Button>
           {/* <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button> */}
           <Button variant="secondary" size="sm" onClick={props.handleClickSearch}>Search Books</Button>
           {/* handleClick instead of handleClickSearch */}
