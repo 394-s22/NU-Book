@@ -8,13 +8,12 @@ This component represents an individual book and its properties.
 */
 const Book = (props) => {
   const [imageList, setImageList] = useState([]);
-  const listFormTitle= props.book["title"] ;
-  const listFormName= props.book["seller-name"]
-  const im_identifier=listFormTitle + listFormName;
-  //const imageListRef = ref(storage, `images/${im_identifier}` + ".jfif");
-  const imageListRef = ref(storage, `images/dababy` + ".jfif");
+  const listFormTitle = props.book["title"].replace(/ /g, "");
+  const listFormName = props.book["seller-name"].replace(/ /g, "");
+  const im_identifier = listFormTitle + "-" + listFormName;
+  const imageListRef = ref(storage, `images/${im_identifier}` + ".*");
+  // const imageListRef = ref(storage, `images/dababy` + ".jfif");
 
-  console.log(imageListRef);
   const imagePath = imageListRef._location.path_;
   console.log(imagePath);
   let imageURL;

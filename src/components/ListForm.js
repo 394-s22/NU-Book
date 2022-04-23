@@ -37,17 +37,20 @@ export const Form = (props) => {
       //user-title
       //get rid of title spaces
        
-      const listFormTitle=document.getElementById("book_name") ;
+      const listFormTitle=(document.getElementById("book_name").value).replace(/ /g, "");
       console.log(listFormTitle.value)
-      const listFormName=document.getElementById("seller_name") ;
-      const im_identifier=listFormTitle + listFormName;
+      const listFormName=(document.getElementById("seller_name").value).replace(/ /g, "");
+      const im_identifier=listFormTitle + "-" + listFormName;
+      console.log("this is the name of the book")
       console.log(im_identifier)
       const imageRef = ref(storage, `images/${im_identifier}`)
+      console.log("this is the file location" + imageRef)
       //
       uploadBytes(imageRef, imageUpload).then(()=>{
         alert("image uploaded");
       })
     }
+
     if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       if (props.searchVisibility) {
         return(
