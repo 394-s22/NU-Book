@@ -12,7 +12,7 @@ const filterData =  (data) =>{
     const formResults = {
       "title": bookForm.elements["title"].value,
       "edition": bookForm.elements["edition"].value,
-      "url": bookForm.elements["url"].value,
+      "image": bookForm.elements["upload-image"].value,
       "department": bookForm.elements["department"].value,
       "class-number": bookForm.elements["class-number"].value,
       "seller-name": bookForm.elements["seller-name"].value,

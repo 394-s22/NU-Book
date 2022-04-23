@@ -129,15 +129,12 @@ export const Form = (props) => {
             </label>
             <br></br>
             <label>
-              <input class="form-control" type="url" name="url" placeholder="Image" />
-            </label>
+              <input type="file" className = "upload-image" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
+            </label> 
             <br></br>
             <Button variant='primary' id="submit_button" type="button" 
             value="Submit" onClick={() => {props.postData(props.handleClick); uploadImage();}}>Submit</Button>
           </form> 
-          <div className = "upload-image">
-              <input type="file" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
-            </div> 
           </div>
         );
       }
