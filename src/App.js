@@ -7,7 +7,8 @@ import {Form} from './components/ListForm.js';
 import Books from './components/Books';
 
 const postData = (handleClick) => {
-  const bookForm = document.getElementById("book-form");
+  console.log("made it to postData")
+  const bookForm = document.getElementById("list-form");
   const formResults = {
     "title": bookForm.elements["title"].value,
     "edition": bookForm.elements["edition"].value,
@@ -19,6 +20,7 @@ const postData = (handleClick) => {
     "price": bookForm.elements["price"].value,
     "email": bookForm.elements["email"].value
     };
+    console.log(formResults)
   if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"]) {
     alert("Title, Department, Class number, and Price are required inputs.");
   }
