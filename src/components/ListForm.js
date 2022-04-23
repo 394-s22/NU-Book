@@ -1,5 +1,11 @@
 import { Button } from 'react-bootstrap';
+import {useState} from 'react'
 import { useUserState } from '../utilities/firebase.js';
+import {storage} from "../utilities/firebase.js"
+import {ref, uploadBytes} from "firebase/storage"
+import Book from './Book';
+import UploadAndDisplayImage from './UploadPic.js'
+
 import { Departments, fetchDepartments } from './Departments.js'
 
 /* This component displays a form that can be used to 
@@ -24,7 +30,27 @@ export const dictToList = (dict) =>{
 
 export const Form = (props) => {
     const [user] = useUserState();
-  // add inputs to function for onSubmit
+    const [imageUpload, setImageUpload] = useState(null);
+
+    const uploadImage = (n1) => {
+      if (imageUpload == null) return;
+      //user-title
+      //get rid of title spaces
+       
+      const listFormTitle=(document.getElementById("book_name").value).replace(/ /g, "");
+      console.log(listFormTitle.value)
+      const listFormName=(document.getElementById("seller_name").value).replace(/ /g, "");
+      const im_identifier=listFormTitle + "-" + listFormName;
+      console.log("this is the name of the book")
+      console.log(im_identifier)
+      const imageRef = ref(storage, `images/${im_identifier}`)
+      console.log("this is the file location" + imageRef)
+      //
+      uploadBytes(imageRef, imageUpload).then(()=>{
+        alert("image uploaded");
+      })
+    }
+
     if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       if (props.searchVisibility) {
         return(
@@ -73,7 +99,7 @@ export const Form = (props) => {
           <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
           <form id="list-form">
             <label>
-              <input class="form-control" type="text" name="title" placeholder="Title"></input>
+              <input id = "book_name" class="form-control" type="text" name="title" placeholder="Title"></input>
             </label>
             <br></br>
             <label>
@@ -90,7 +116,7 @@ export const Form = (props) => {
             </label>
             <br></br>
             <label>
-              <input class="form-control" type="text" name="seller-name" placeholder="Your name"></input>
+              <input id="seller_name" class="form-control" type="text" name="seller-name" placeholder="Your name"></input>
             </label>
             <br></br>
             <label>
@@ -114,11 +140,12 @@ export const Form = (props) => {
             </label>
             <br></br>
             <label>
-              <input class="form-control" type="url" name="url" placeholder="Image" />
-            </label>
+              <input type="file" className = "upload-image" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
+            </label> 
             <br></br>
+            
             <Button variant='primary' id="submit_button" type="button" 
-            value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
+            value="Submit" onClick={() => {props.postData(props.handleClick); uploadImage();}}>Submit</Button>
           </form> 
           </div>
         );
