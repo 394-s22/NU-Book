@@ -78,13 +78,23 @@ const addBook = async(Book) =>{
   }
 }
 
+const addUser = async(user) => {
+  
+  if (user) {
+    try {
+      addData(`/users`, user);
+    } catch (error) {
+      alert(error);
+    }
+  }
+}
+
 function App() {
   // Prints the content in the database
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
   
-  delete_book('Introducing Islam','dlsotir@gmail.com')
   return (
     <div className="App">
        
