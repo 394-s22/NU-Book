@@ -35,7 +35,7 @@ const SignOutButton = () => (
   </button>
 );
 
-const Title = () => {
+const Title = (props) => {
   const [user] = useUserState();
   return (
     <div>

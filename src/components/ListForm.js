@@ -35,9 +35,21 @@ export const Form = (props) => {
       props.postData(d); 
       uploadImage();
     }
-    const uploadImage = () => {
+
+
+
+    const uploadImage = (n1) => {
       if (imageUpload == null) return;
-      const imageRef = ref(storage, `images/${imageUpload.name}`)
+      //user-title
+      //get rid of title spaces
+       
+      const listFormTitle=document.getElementById("book_name") ;
+      console.log(listFormTitle.value)
+      const listFormName=document.getElementById("seller_name") ;
+      const im_identifier=listFormTitle + listFormName;
+      console.log(im_identifier)
+      const imageRef = ref(storage, `images/${im_identifier}`)
+      //
       uploadBytes(imageRef, imageUpload).then(()=>{
         alert("image uploaded");
       })
@@ -89,7 +101,7 @@ export const Form = (props) => {
           <Button variant="primary" size="sm" onClick={props.handleClick}>X</Button>
           <form id="list-form">
             <label>
-              <input class="form-control" type="text" name="title" placeholder="Title"></input>
+              <input id = "book_name" class="form-control" type="text" name="title" placeholder="Title"></input>
             </label>
             <br></br>
             <label>
@@ -105,7 +117,7 @@ export const Form = (props) => {
             </label>
             <br></br>
             <label>
-              <input class="form-control" type="text" name="seller-name" placeholder="Your name"></input>
+              <input id="seller_name" class="form-control" type="text" name="seller-name" placeholder="Your name"></input>
             </label>
             <br></br>
             <label>
@@ -132,6 +144,7 @@ export const Form = (props) => {
               <input type="file" className = "upload-image" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
             </label> 
             <br></br>
+            
             <Button variant='primary' id="submit_button" type="button" 
             value="Submit" onClick={() => {props.postData(props.handleClick); uploadImage();}}>Submit</Button>
           </form> 
