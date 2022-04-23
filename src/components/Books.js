@@ -1,6 +1,7 @@
 import Book from './Book';
 import { useData } from '../utilities/firebase.js';
 import { dictToList } from './ListForm.js';
+
 /*
 This component represents every book in the books database.
 */
