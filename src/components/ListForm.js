@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { useUserState } from '../utilities/firebase.js';
-import Book from './Book';
+import { Departments, fetchDepartments } from './Departments.js'
 
 /* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
@@ -42,9 +42,10 @@ export const Form = (props) => {
                 <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
               </label>
               <br></br>
-              <label>
-                <input class="form-control" type="text" name="department" placeholder="Department"></input>
-              </label>
+              <select name="department">
+                <option selected disabled>Department</option>
+                <Departments/>
+              </select>
               <br></br>
               <label>
                 <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
@@ -79,9 +80,10 @@ export const Form = (props) => {
               <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
             </label>
             <br></br>
-            <label>
-              <input class="form-control" type="text" name="department" placeholder="Department"></input>
-            </label>
+            <select name="department">
+              <option selected disabled>Department</option>
+              <Departments/>
+            </select>
             <br></br>
             <label>
               <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
