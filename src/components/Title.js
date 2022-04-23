@@ -37,7 +37,6 @@ const SignOutButton = () => (
   </button>
 );
 
-<<<<<<< HEAD
 const checkEmail = (current_user, data) =>{
   const all_users = dictToList(data["users"]);
   const all_emails = all_users.filter(user => user["email"] === current_user["email"]);
@@ -48,9 +47,6 @@ const checkEmail = (current_user, data) =>{
 let state = 0;
 
 const Title = () => {
-=======
-const Title = (props) => {
->>>>>>> 27269b2222f289f5ab23be7f50750387d8eb67a5
   const [user] = useUserState();
 
   // get all users
