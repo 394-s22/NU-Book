@@ -1,4 +1,3 @@
-
 import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import {useEffect, useState} from 'react'
 import {storage} from '../utilities/firebase.js'
@@ -6,6 +5,7 @@ import {storage} from '../utilities/firebase.js'
 /* 
 This component represents an individual book and its properties.
 */
+
 const Book = (props) => {
   const [image, setImage] = useState("");
   const listFormTitle = props.book["title"].replace(/ /g, "");
@@ -16,6 +16,7 @@ const Book = (props) => {
 
   const imagePath = imageListRef._location.path_;
   
+  // pulls correct image URL (based on book title and seller name) from database and sets to image
   useEffect(() => {
     const getImageURL = async () => {
       const downloadURL = await getDownloadURL(ref(storage, imagePath))
@@ -29,7 +30,6 @@ const Book = (props) => {
     <div class="card" style={{width: '22rem', padding: '15px'}}>
       <div class="row no-gutters">
         <div class="col-md-4">
-        {/* change image here */}
         <img src={image} alt="book-preview" width="100" height="150"/>
         </div>
         <div class="col-md-8">
@@ -43,7 +43,6 @@ const Book = (props) => {
               <li class="list-group-item">{props.book["quality"]}</li>
             </ul>
 
-            {/* <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a> */}
             <a class="btn btn-outline-success btn-sm" href={"mailto:" + props.book["email"] + "?subject=just-a-subject"} role="button">Contact</a>
             </p>
           </div> 

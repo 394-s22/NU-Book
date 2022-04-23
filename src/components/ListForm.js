@@ -11,10 +11,6 @@ import { Departments, fetchDepartments } from './Departments.js'
 /* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
 
-THINGS TO DO IN THE FUTURE:
-overlay on top 
-css
-
 For the Button update:
 The original icon style was rectangular, but now the corners of the icons have become more rounded and look more comfortable
 
@@ -27,7 +23,9 @@ export const dictToList = (dict) =>{
     return arr;
 }
 
-
+/*
+Component that encapsulates search and 
+*/
 export const Form = (props) => {
     const [user] = useUserState();
     const [imageUpload, setImageUpload] = useState(null);
