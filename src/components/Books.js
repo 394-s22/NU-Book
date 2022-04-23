@@ -45,7 +45,7 @@ const filterData =  (data) =>{
       });
 
 
-      if(!formResults["title"] && !formResults["edition"]&& !formResults["department"]&& !formResults["price"]){
+      if(!formResults["title"] && !formResults["edition"]&& !formResults["price"]){
         return [allBooks, allBooks.length]
       }
       return [lst, allBooks.length];
