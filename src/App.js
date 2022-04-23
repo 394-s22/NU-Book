@@ -11,7 +11,6 @@ const postData = (handleClick, email , data) => {
   const formResults = {
     "title": bookForm.elements["title"].value,
     "edition": bookForm.elements["edition"].value,
-    "url": bookForm.elements["url"].value,
     "department": bookForm.elements["department"].value,
     "class-number": bookForm.elements["class-number"].value,
     "seller-name": bookForm.elements["seller-name"].value,
@@ -112,6 +111,7 @@ const addBook = async(Book, email, data) =>{
       let key = Find_current_user(email, data);
       console.log(key[0]);
       addData(`/users/${key[0]}/books`, Book)
+      window.location.reload(false);
     } catch (error) {
       alert(error);
     }
