@@ -30,7 +30,11 @@ export const dictToList = (dict) =>{
 export const Form = (props) => {
     const [user] = useUserState();
     const [imageUpload, setImageUpload] = useState(null);
-  // add inputs to function for onSubmit
+    // add inputs to function for onSubmit
+    const uploadImageAndPostData = (d) => {
+      props.postData(d); 
+      uploadImage();
+    }
     const uploadImage = () => {
       if (imageUpload == null) return;
       const imageRef = ref(storage, `images/${imageUpload.name}`)
@@ -38,20 +42,7 @@ export const Form = (props) => {
         alert("image uploaded");
       })
     }
-    if (true){
-      return (
-        <div className = "tmepor">
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <input type="file" onChange={(event) => {setImageUpload(event.target.files[0]);}}
-            />
-          <button onClick = {uploadImage}> Upload Image </button>
-        </div>
-      )
-    }
-    else if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
+    if (props.visibility) { // added another <br> to make the X button visible but we should do margin/padding later
       if (props.searchVisibility) {
         return(
           <div>
@@ -84,7 +75,7 @@ export const Form = (props) => {
               <br></br>
               <Button variant='primary' id="submit_button" type="button" 
               value="Submit" onClick={props.handleClickSearch}>Submit</Button>
-            </form> 
+            </form>
             {/* change the on-click function -- SHOULD NOT BE POST */}
           </div>
           );
@@ -140,13 +131,13 @@ export const Form = (props) => {
             <label>
               <input class="form-control" type="url" name="url" placeholder="Image" />
             </label>
-            <input type="file" onChange={(event) => {setImageUpload(event.target.files[0]);}}
-            />
-            <button onClick = {uploadImage}> Upload Image </button>
             <br></br>
             <Button variant='primary' id="submit_button" type="button" 
-            value="Submit" onClick={() => {props.postData(props.handleClick)}}>Submit</Button>
+            value="Submit" onClick={() => {uploadImageAndPostData(props.handleClick)}}>Submit</Button>
           </form> 
+          <div className = "upload-image">
+              <input type="file" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
+            </div> 
           </div>
         );
       }
