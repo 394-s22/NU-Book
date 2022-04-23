@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import { useData, setData, addData, useUserState } from './utilities/firebase.js';
+import { useData, setData, addData, useUserState, test_user, delete_book } from './utilities/firebase.js';
 import Title from './components/Title.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form} from './components/ListForm.js';
@@ -16,10 +16,12 @@ const postData = (handleClick) => {
     "seller-name": bookForm.elements["seller-name"].value,
     "seller-phone": bookForm.elements["seller-phone"].value,
     "price": bookForm.elements["price"].value,
+    "quality": bookForm.elements["quality"].value,
+    "ISBN": bookForm.elements["ISBN"].value,
     "email": bookForm.elements["email"].value
     };
-  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"]) {
-    alert("Title, Department, Class number, and Price are required inputs.");
+  if(!formResults["title"] || !formResults["department"] || !formResults["class-number"] || !formResults["price"] || !formResults["quality"]) {
+    alert("Title, Department, Class number, Price, and Quality are required inputs.");
   }
   else {
     addBook(formResults);
@@ -32,33 +34,24 @@ const Body = (props) => {
   // if books are visible, form is not visible
   // formVisibility = !bookVisibility
   const [bookVisibility, setBookVisibility] = useState(true);
-  const [searchVisibility, setSearchVisibility] = useState(true);
+  const [searchVisibility, setSearchVisibility] = useState(false);
   // how to pass state down to children?
 
   const handleClick = () => {
-    if(bookVisibility) {
-      console.log(document.getElementById("submit_button"))
-      setBookVisibility(false);
-    } else {
-      setBookVisibility(true);
-    }
+    setBookVisibility(!bookVisibility)
   }
   // pass down handleClick function
   
   const handleClickSearch = () => {
-    if(searchVisibility) {
-      console.log(document.getElementById("submit_button"))
-      setSearchVisibility(false);
-    } else {
-      setSearchVisibility(true);
-    }
+    setBookVisibility(!bookVisibility)
+    setSearchVisibility(!searchVisibility)
   }
 
   return (
     <div>
-      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={!searchVisibility}postData={postData} data = {props.data}/>
+      <Form handleClick={handleClick} visibility = {!bookVisibility} handleClickSearch = {handleClickSearch} searchVisibility={searchVisibility} postData={postData} data = {props.data}/>
       {/* <SearchForm handleClick={handleClickSearch} visibility={!bookVisibility} postData={postData}/> */}
-      <Books  visibility={bookVisibility && searchVisibility}/>
+      <Books visibility={bookVisibility && !searchVisibility} searchVisibility={searchVisibility}/>
     </div>
   )
 }
@@ -91,12 +84,10 @@ function App() {
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
-
   return (
     <div className="App">
        
      <Title/>
-        <Books/>
         <Body data ={data}/>
     </div>
   );

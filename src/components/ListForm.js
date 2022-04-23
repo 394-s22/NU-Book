@@ -6,6 +6,7 @@ import {ref, uploadBytes} from "firebase/storage"
 import Book from './Book';
 import UploadAndDisplayImage from './UploadPic.js'
 
+import { Departments, fetchDepartments } from './Departments.js'
 
 /* This component displays a form that can be used to 
 list a book. There are buttons that control the visibility (List Book and X)
@@ -30,13 +31,6 @@ export const dictToList = (dict) =>{
 export const Form = (props) => {
     const [user] = useUserState();
     const [imageUpload, setImageUpload] = useState(null);
-    // add inputs to function for onSubmit
-    const uploadImageAndPostData = (d) => {
-      props.postData(d); 
-      uploadImage();
-    }
-
-
 
     const uploadImage = (n1) => {
       if (imageUpload == null) return;
@@ -71,9 +65,10 @@ export const Form = (props) => {
                 <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
               </label>
               <br></br>
-              <label>
-                <input class="form-control" type="text" name="department" placeholder="Department"></input>
-              </label>
+              <select name="department">
+                <option selected disabled>Department</option>
+                <Departments/>
+              </select>
               <br></br>
               <label>
                 <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
@@ -87,7 +82,7 @@ export const Form = (props) => {
               <br></br>
               <Button variant='primary' id="submit_button" type="button" 
               value="Submit" onClick={props.handleClickSearch}>Submit</Button>
-            </form>
+            </form> 
             {/* change the on-click function -- SHOULD NOT BE POST */}
           </div>
           );
@@ -108,9 +103,10 @@ export const Form = (props) => {
               <input class="form-control" type="text" name="edition" placeholder="Edition"></input>
             </label>
             <br></br>
-            <label>
-              <input class="form-control" type="text" name="department" placeholder="Department"></input>
-            </label>
+            <select name="department">
+              <option selected disabled>Department</option>
+              <Departments/>
+            </select>
             <br></br>
             <label>
               <input class="form-control" type="text" name="class-number" placeholder="Class number"></input>
@@ -155,14 +151,11 @@ export const Form = (props) => {
     else {
       return (
         <div className="listBook">
-           <br></br>
-           <br></br>
-           <br></br>
-           <br></br>
-           {/* !user ? ()=> alert("you must sign in first to list a book"): */}
+          {/* !user ? ()=> alert("you must sign in first to list a book"): */}
           <Button variant="primary" size="sm" onClick={props.handleClick}>List a Book</Button>
           {/* <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button> */}
-          <Button variant="secondary" size="sm" onClick={props.handleClick}>Search for a Book</Button>
+          <Button variant="secondary" size="sm" onClick={props.handleClickSearch}>Search Books</Button>
+          {/* handleClick instead of handleClickSearch */}
           {/* <button type = "button" className = "btn-secondary" onClick={ props.handleClickSearch}>Search for a Book</button>       */}
         </div>
       )
