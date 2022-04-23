@@ -30,7 +30,7 @@ const postData = (handleClick) => {
   }
 }
 
-const AddUser = async(user) => {
+export const AddUser = async(user) => {
   //get user on change
   if (user) {
     // this creates a user object and add to the database
@@ -41,7 +41,7 @@ const AddUser = async(user) => {
     }
     console.log(user)
     try {
-      addData(`/users`, userObj);
+      await addData(`/users`, userObj);
     } catch (error) {
       alert(error);
     }
@@ -50,7 +50,7 @@ const AddUser = async(user) => {
 
 const Body = (props) => {
   const [user] = useUserState();
-  AddUser(user);
+  // AddUser(user);
   // bookVisibility is if the books are visible
   // if books are visible, form is not visible
   // formVisibility = !bookVisibility

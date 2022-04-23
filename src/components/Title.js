@@ -13,13 +13,14 @@
 // export default Title
 
 
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import {signInWithGoogle, useUserState,addData, signOut} from '../utilities/firebase.js';
 import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup } from 'firebase/auth';
+import { AddUser } from "../App.js";
 
 const LoginButton = () => (
   <button className="btn-secondary btn-sm"
@@ -38,13 +39,19 @@ const SignOutButton = () => (
 
 const Title = () => {
   const [user] = useUserState();
+  const [state, setState] = useState(0);
+  if(user && state === 0){
+    AddUser(user);
+    setState(1);
+  }
+  
   return (
     <div>
       <AppBar position="fixed" style={{ background: " #410ca3" }}>
 
         <Toolbar color="purple">
           <Typography variant="h6">NU Book</Typography>
-          { user ? <SignOutButton /> : <LoginButton /> }
+          { user ? <SignOutButton /> : <LoginButton/> }
         </Toolbar>
       </AppBar>
     </div>
