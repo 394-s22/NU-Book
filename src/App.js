@@ -73,6 +73,7 @@ const addBook = async(Book) =>{
   if (Book) {
     try {
       addData(`/book-sales`, Book);
+      window.location.reload(false);
     } catch (error) {
       alert(error);
     }
