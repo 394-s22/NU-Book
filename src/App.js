@@ -30,7 +30,27 @@ const postData = (handleClick) => {
   }
 }
 
+const AddUser = async(user) => {
+  //get user on change
+  if (user) {
+    // this creates a user object and add to the database
+    const userObj = {
+        userName: user.displayName,
+        email : user.email,
+        books : []
+    }
+    console.log(user)
+    try {
+      addData(`/users`, userObj);
+    } catch (error) {
+      alert(error);
+    }
+  }
+}
+
 const Body = (props) => {
+  const [user] = useUserState();
+  AddUser(user);
   // bookVisibility is if the books are visible
   // if books are visible, form is not visible
   // formVisibility = !bookVisibility
@@ -80,22 +100,13 @@ const addBook = async(Book) =>{
   }
 }
 
-const addUser = async(user) => {
-  
-  if (user) {
-    try {
-      addData(`/users`, user);
-    } catch (error) {
-      alert(error);
-    }
-  }
-}
 
 function App() {
   // Prints the content in the database
   const [data, loading, error] = useData('/'); 
   if (error) return <h1>{error}</h1>;
   if (loading) return <h1>Loading the books...</h1>
+
   return (
     <div className="App">
        

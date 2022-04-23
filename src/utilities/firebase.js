@@ -85,26 +85,7 @@ export const useUserState = () => {
 
 
 
-<<<<<<< HEAD
-export const get_user = () => {
 
-  if (user !== null) {
-    // The user object has basic properties such as display name, email, etc.
-    const displayName = user.displayName;
-    const email = user.email;
-    const photoURL = user.photoURL;
-    const emailVerified = user.emailVerified;
-
-    // The user's ID, unique to the Firebase project. Do NOT use
-    // this value to authenticate with your backend server, if
-    // you have one. Use User.getToken() instead.
-    const uid = user.uid;
-    return [displayName,email]
-  }
-  else{
-    console.log('user == NULL')
-  }
-}
 /*
 export const remove_book_by_key = (key) => {
   ref(database, `/book-sales/${key}`).remove()
@@ -121,5 +102,3 @@ export const delete_book = (title, email) => {
   remove_book_by_key(filtered[0].Key)
 }
 */
-=======
->>>>>>> 6031ed7feeea0f364eff2fde1d6b6ebfef8f847f
