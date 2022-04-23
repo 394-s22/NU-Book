@@ -1,4 +1,11 @@
 {
+    "users": [
+        {
+            "userName": "david",
+            "email": "asdfasdfasdf@gmail.com",
+            "books": [0]
+        }
+    ],
     "book-sales": [
         {
         "title": "Modern Chinese",

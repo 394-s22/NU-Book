@@ -128,7 +128,7 @@ export const Form = (props) => {
       return (
         <div className="listBook">
           {/* !user ? ()=> alert("you must sign in first to list a book"): */}
-          <Button variant="primary" size="sm" onClick={props.handleClick}>List a Book</Button>
+          <Button variant="primary" size="sm" onClick={() => !user ? alert("You must login to list a book"): props.handleClick()}>List a Book</Button>
           {/* <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button> */}
           <Button variant="secondary" size="sm" onClick={props.handleClickSearch}>Search Books</Button>
           {/* handleClick instead of handleClickSearch */}
