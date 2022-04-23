@@ -80,6 +80,17 @@ const addBook = async(Book) =>{
   }
 }
 
+const addUser = async(user) => {
+  
+  if (user) {
+    try {
+      addData(`/users`, user);
+    } catch (error) {
+      alert(error);
+    }
+  }
+}
+
 function App() {
   // Prints the content in the database
   const [data, loading, error] = useData('/'); 

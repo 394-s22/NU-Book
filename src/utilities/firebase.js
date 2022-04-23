@@ -83,13 +83,9 @@ export const useUserState = () => {
   return [user];
 };
 
-export const test_user = () => {
-  console.log(getAuth(firebase))
-}
 
-const auth = getAuth();
-const user = auth.currentUser;
 
+<<<<<<< HEAD
 export const get_user = () => {
 
   if (user !== null) {
@@ -125,3 +121,5 @@ export const delete_book = (title, email) => {
   remove_book_by_key(filtered[0].Key)
 }
 */
+=======
+>>>>>>> 6031ed7feeea0f364eff2fde1d6b6ebfef8f847f
