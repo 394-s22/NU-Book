@@ -11,7 +11,6 @@ const postData = (handleClick) => {
   const formResults = {
     "title": bookForm.elements["title"].value,
     "edition": bookForm.elements["edition"].value,
-    "url": bookForm.elements["url"].value,
     "department": bookForm.elements["department"].value,
     "class-number": bookForm.elements["class-number"].value,
     "seller-name": bookForm.elements["seller-name"].value,
@@ -74,6 +73,7 @@ const addBook = async(Book) =>{
   if (Book) {
     try {
       addData(`/book-sales`, Book);
+      window.location.reload(false);
     } catch (error) {
       alert(error);
     }
