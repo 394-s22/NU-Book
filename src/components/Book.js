@@ -44,7 +44,8 @@ const Book = (props) => {
             </ul>
 
             {/* <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a> */}
-            <a class="btn btn-outline-success btn-sm" href={"mailto:" + props.book["email"] + "?subject=just-a-subject"} role="button">Contact</a>
+            {/* <a class="btn btn-outline-success btn-sm" href={"mailto:" + props.book["email"] + "?subject=just-a-subject"} role="button">Contact</a> */}
+            <a href="mailto:fake@email.com">{props.book["email"]}</a>
             </p>
           </div> 
         </div>
