@@ -139,11 +139,11 @@ export const Form = (props) => {
               <input class="form-control" type="text" name="email" placeholder="Email" />
             </label>
             <br></br>
-            <label>
-              <input type="file" className = "upload-image" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
+            <label style={{marginLeft: "85px"}}>
+              <input type="file" class="upload-image" onChange={(event) => {setImageUpload(event.target.files[0]);}}/>
             </label> 
             <br></br>
-            
+            <br></br>
             <Button variant='primary' id="submit_button" type="button" 
             value="Submit" onClick={() => {props.postData(props.handleClick, props.email, props.data); uploadImage();}}>Submit</Button>
           </form> 

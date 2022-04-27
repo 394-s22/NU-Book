@@ -41,10 +41,14 @@ const Book = (props) => {
               <li class="list-group-item">{props.book["seller-name"]}</li>
               <li class="list-group-item">${props.book["price"]}</li>
               <li class="list-group-item">{props.book["quality"]}</li>
+              <li class="list-group-item">
+                <a class="btn btn-outline-success btn-sm" href={"mailto:" + props.book["email"] + "?subject=NU-Book Purchase"} role="button">Send an Email</a>
+                <br></br>
+                <div class="email-text">to: {props.book["email"]}</div>
+              </li>
             </ul>
 
             {/* <a href={"mailto:" + props.book["email"] + "?subject=just-a-subject"}>Contact</a> */}
-            <a class="btn btn-outline-success btn-sm" href={"mailto:" + props.book["email"] + "?subject=just-a-subject"} role="button">Contact</a>
             </p>
           </div> 
         </div>
