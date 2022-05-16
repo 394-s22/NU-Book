@@ -26,7 +26,7 @@ const Book = (props) => {
   }, [])
 
   return (
-    <div class="card" style={{width: '22rem', padding: '15px'}}>
+    <div class="card" style={{width: '22rem', padding: '15px'}} data-cy="textbook-entry">
       <div class="row no-gutters">
         <div class="col-md-4">
         {/* change image here */}
