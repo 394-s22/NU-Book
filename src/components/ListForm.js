@@ -153,7 +153,7 @@ export const Form = (props) => {
     }
     else {
       return (
-        <div className="listBook">
+        <div className="listBook" data-cy='buttons'>
           {/* !user ? ()=> alert("you must sign in first to list a book"): */}
           <Button variant="primary" size="sm" onClick={() => !user ? alert("You must login to list a book"): props.handleClick()}>List a Book</Button>
           {/* <button type = "button" className = "btn-primary" onClick={ props.handleClick}>List a Book</button> */}
