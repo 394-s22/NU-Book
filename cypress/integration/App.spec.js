@@ -6,10 +6,10 @@ describe ('Test App', () => {
       cy.visit ('/');
     });
 
-    it ('opens with textbooks', () => {
-      cy.visit('/');
-      cy.get('[data-cy=book]').should('contain', 'textbook-entry');
-    });
+    // it ('opens with textbooks', () => {
+    //   cy.visit('/');
+    //   cy.get('[data-cy=textbook-entry]').should('contain', 'textbook-entry');
+    // });
   
     it ('check buttons', () => {
       cy.visit ('/');
@@ -17,5 +17,12 @@ describe ('Test App', () => {
       
       cy.get('[data-cy=buttons]').should('contain', 'Search Books');
     });
+
+    it('shows submit button when search books button is clicked', () => {
+      cy.visit ('/');
+      cy.get('Button[arialabel=search]').click({force: true});
+      cy.get('Button[arialabel=submit]').should('contain' ,'Submit');
+    });
+
 
   });
