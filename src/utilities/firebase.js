@@ -32,7 +32,7 @@ const auth = getAuth(firebase);
 var db;
 if (process.env.REACT_APP_EMULATE) {
   connectAuthEmulator(auth, "http://127.0.0.1:9099");
-  connectDatabaseEmulator(db, "127.0.0.1", 9000);
+  connectDatabaseEmulator(database, "127.0.0.1", 9000);
 
   signInWithCredential(auth, GoogleAuthProvider.credential(
     '{"sub": "jih7m8yBDccsjfMO1DpOaVIkIUAR", "email": "dummy@gmail.com", "displayName":"dummy", "email_verified": true}'
