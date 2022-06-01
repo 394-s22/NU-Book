@@ -2,8 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import{useState, useEffect} from "react";
-import{ref, onValue, getDatabase,set, push} from "firebase/database";
-import { getAuth, onAuthStateChanged, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut } from 'firebase/auth';
+import{ref, onValue, getDatabase,set, push, connectDatabaseEmulator} from "firebase/database";
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, connectAuthEmulator, signInWithCredential, 
+  onIdTokenChanged, signInWithPopup, signOut } from 'firebase/auth';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import {getStorage} from "firebase/storage";
@@ -26,6 +27,18 @@ const analytics = getAnalytics(app);
 const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
 export const storage = getStorage(app);
+const auth = getAuth(firebase);
+
+var db;
+if (process.env.REACT_APP_EMULATE) {
+  connectAuthEmulator(auth, "http://127.0.0.1:9099");
+  connectDatabaseEmulator(database, "127.0.0.1", 9000);
+
+  signInWithCredential(auth, GoogleAuthProvider.credential(
+    '{"sub": "jih7m8yBDccsjfMO1DpOaVIkIUAR", "email": "dummy@gmail.com", "displayName":"dummy", "email_verified": true}'
+  ));
+}
+
 
 //GET request (get the data from firebase)
 //path = '/book-sales'
