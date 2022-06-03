@@ -4,21 +4,32 @@ import Title from './components/Title.js';
 
 import { useData, useUserState }from './utilities/firebase.js';
 
-jest.mock('./utilities/firebase.js');
+jest.mock('./utilities/firebase.js', () => {
+  const originalB = jest.requireActual('./utilities/firebase.js');
+  const partialMockedB = Object.keys(originalB).reduce((pre, methodName) => {
+    pre[methodName] = jest.fn();
+    return pre;
+  }, {});
+  return {
+    ...partialMockedB,
+    useUserState: originalB.useUserState,
+    storage: originalB.storage // mock all methods of b except method3
+  };
+});
 
 const mockData = {
   "book-sales": {
     "fakeBook": {
       "ISBN": "7777",
-      "class-number": "223",
-      "department": "SPANISH",
+      "class-number": "1",
+      "department": "TEST",
       "edition": "7",
       "email": "dummy@gmail.com",
-      "price": "24",
-      "quality": "Excellent",
-      "seller-name": "dummy",
+      "price": "77.77",
+      "quality": "TEST",
+      "seller-name": "Test user",
       "seller-phone": "31231231231",
-      "title": "FakeBook"
+      "title": "Fake Book"
     }
   },
   "users": {
@@ -45,14 +56,14 @@ const mockData = {
 }
 
 
-test('check for sign out button when login ', async () => {
+test('Mock data test', async () => {
   
   useData.mockReturnValue([mockData, false, null]);
-  useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
+  //useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
 
-  render(<Title />);
+  render(<App />);
   await new Promise((r) => setTimeout(r, 500));
-  const button = screen.getByText(/sign out/i);
-  expect(button).toBeVisible();
+  const fakeEmail = screen.getByText(/dummy@gmail.com/i);
+  expect(fakeEmail).toBeVisible();
 });
 
