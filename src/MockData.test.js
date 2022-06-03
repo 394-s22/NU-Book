@@ -4,6 +4,8 @@ import Title from './components/Title.js';
 
 import { useData, useUserState }from './utilities/firebase.js';
 
+
+// Author: Lingyue Chu
 jest.mock('./utilities/firebase.js', () => {
   const originalB = jest.requireActual('./utilities/firebase.js');
   const partialMockedB = Object.keys(originalB).reduce((pre, methodName) => {

@@ -4,6 +4,7 @@ import Title from './components/Title.js';
 
 import { useData, useUserState }from './utilities/firebase.js';
 
+// Author: Lingyue Chu
 jest.mock('./utilities/firebase.js');
 
 const mockData = {

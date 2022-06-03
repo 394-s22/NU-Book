@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
+// Author: Lingyue Chu
 test('check for retrieving data from firebase', async () => {
   render(<App />);
   
