@@ -1,10 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import {Form} from './components/ListForm.js'
+import {Departments} from './components/Departments.js'
+
 import { useData, useUserState }from './utilities/firebase.js';
 
 jest.mock('./utilities/firebase.js');
+jest.mock('./components/Departments.js');
 
 
+const departmentData = [ <option value="Test_DEPT">Test_DEPT</option> ]
 const mockData = {
   "book-sales": {
     "fakeBook": {
@@ -44,16 +48,15 @@ const mockData = {
 }
 
 
-test('list book form renders ', async () => {
+test('Form populates with departments ', async () => {
   
   useData.mockReturnValue([mockData, false, null]);
   useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
+  Departments.mockReturnValue([departmentData, false, null])
   render(<Form visibility={true}/>)
   await new Promise((r) => setTimeout(r, 500));
-  const button = screen.getByText(/submit/i);
-  const TitleButton = screen.getByPlaceholderText(/Title/i);
-  expect(TitleButton).toBeVisible();
-  expect(button).toBeVisible();
+  const testOption = screen.getByText(/test_DEPT/i);
+  expect(testOption).toBeVisible();
 });
 
 
