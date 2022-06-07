@@ -27,3 +27,12 @@ test('Search page loads', async () => {
     const btn = screen.getByText(/Submit/i);
     expect(btn).toBeInTheDocument();
   });
+
+  test('Search page load error', async () => {
+    useUserState.mockReturnValue([{ displayName: "Test User" }, false, null]);
+    render(<App />);
+    await new Promise((r) => setTimeout(r, 500));
+    const sbutt = screen.getByText(/Search Book/i);
+    userEvent.click(sbutt);
+    expect(screen.queryByText(/Search Book/i)).toBeNull;
+  });
