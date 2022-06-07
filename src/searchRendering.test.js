@@ -57,7 +57,7 @@ const mockData = {
     }
   }
 
-test('search book form renders', async () => {
+test('checks to see search book form renders', async () => {
   useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
   render(<App/>)
   await new Promise((r) => setTimeout(r, 500));
