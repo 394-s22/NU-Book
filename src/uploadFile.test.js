@@ -59,7 +59,7 @@ const mockData = {
 }
 
 
-test('Check to see if upload file functionality renders ', async () => {
+test('Check to see if there is an error when uploading book without filling in text ', async () => {
   
     useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
     
