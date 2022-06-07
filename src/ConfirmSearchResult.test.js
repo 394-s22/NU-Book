@@ -33,13 +33,4 @@ test('check search book return the right results', async () => {
     expect(math).toBeInTheDocument();
   });
 
-//   test('List a Book Error ', async () => {
-//     useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
-//     render(<App />);
-//     await new Promise((r) => setTimeout(r, 500));
-//     const ListtButt = screen.getByText(/List a Book/i);
-//     expect(ListtButt).toBeInTheDocument();
-//     expect(()=> userEvent.click(ListtButt)).toThrowError;
-
-//   });
   
