@@ -61,7 +61,7 @@ export const Form = (props) => {
             <Button variant="primary" size="sm" onClick={props.handleClickSearch}>X</Button>
             <form id="search-form">
               <label>
-                <input class="form-control" type="text" name="title" placeholder="Title"></input>
+                <input data-testid = "test" class="form-control" type="text" name="title" placeholder="Title"></input>
               </label>
               <br></br>
               <label>
