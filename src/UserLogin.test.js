@@ -57,3 +57,16 @@ test('check for sign out button when login ', async () => {
   expect(button).toBeVisible();
 });
 
+
+// author of below: Sydney
+test('sign out button signs out user ', async () => {
+
+  useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
+
+  render(<Title />);
+  const logoutButt = screen.getByText(/Sign Out/i);
+  userEvent.click(logoutButt);
+  const loginButt = screen.getByText(/Sign In/i);
+  expect(loginButt).toBeVisible();
+});
+

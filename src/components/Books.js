@@ -30,9 +30,11 @@ const filterData =  (data) =>{
     
       let lst = [];
       // filtering word fields
+      // make sure department field isn't default because then all default department books will come up when you 
+      // don't enter a value for department
       exactFields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>
-          formResults[field] != "" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
+          formResults[field] != "" && formResults[field] != "Department" && book[field].toLowerCase().includes(formResults[field].toLowerCase()));
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
 
@@ -46,8 +48,7 @@ const filterData =  (data) =>{
       // filtering price
       num_Fields.forEach((field) => {
         let fieldSpecificBooks = allBooks.filter(book =>
-          formResults[field] != "" && parseFloat(book[field])<=parseFloat(formResults[field]) );
-      
+          formResults[field] != "" && (parseFloat(book[field]) <= formResults[field]));
         lst = Array.from(new Set(lst.concat(fieldSpecificBooks)));
       });
 

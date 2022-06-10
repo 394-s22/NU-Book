@@ -1,4 +1,6 @@
-//Author: David Cheung
+// Author: Sydney Smith
+// I also wrote another test in UserLogin.test.js
+
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import { useData, useUserState }from './utilities/firebase.js';
@@ -17,20 +19,23 @@ jest.mock('./utilities/firebase.js', () => {
   };
 });
 
-
-test('check search book return the right results', async () => {
+  test('check that filtering by price works in search', async () => {
     useUserState.mockReturnValue([{ displayName: 'Test user' }, false, null]);
     render(<App />);
     await new Promise((r) => setTimeout(r, 500));
-    const searchbutt = screen.getByText(/Search Books/i);
-    userEvent.click(searchbutt);
+    const searchButton = screen.getByText(/Search Books/i);
+    userEvent.click(searchButton);
     const submit = screen.getByText(/submit/i);
     expect(submit).toBeInTheDocument();
-    const input = screen.getByTestId("title-test");
-    userEvent.type(input, "Math");
+    const priceInput = screen.getByTestId("price-test");
+    userEvent.type(priceInput, "30");
     userEvent.click(submit);
-    const math = screen.getByText(/Math Proofs/i);
-    expect(math).toBeInTheDocument();
+    // books with price <= $30 should be there
+    const spanishBook = screen.getByText(/Don Quixote/i);
+    expect(spanishBook).toBeInTheDocument();
+    const geometryBook = screen.getByText(/Geometry Fundamentals/i);
+    expect(geometryBook).toBeInTheDocument();
+    // books with price > $30 should not be there
+    const artBook = screen.queryByText(/An Art History Guide/i);
+    expect(artBook).not.toBeInTheDocument();
   });
-
-  
